@@ -1,1 +1,2562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0">
+<meta name="theme-color" content="#faf8f5">
+<title>Japan 2026 · Tatham & Schiller · Happy Camper</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ════════════════════════════════════════════════════════════
+   DESIGN TOKENS — Happy Camper · Japan early-summer palette
+   Late May / early June: green tea, deep indigo, refined red
+   ════════════════════════════════════════════════════════════ */
+:root {
+  --ink:        #1a1612;
+  --ink2:       #3d3530;
+  --ink3:       #6b5f58;
+  --ink4:       #968a82;
+  --paper:      #faf8f5;
+  --paper2:     #f5f1ea;
+  --warm:       #fff9f0;
+  --gold:       #b8892a;
+  --gold-soft:  #d4b35f;
+  --red:        #b8341f;
+  --red-soft:   #f9ecea;
+  --indigo:     #2c4a6b;
+  --indigo-soft:#e8eef4;
+  --tea:        #5a7a4a;
+  --tea-soft:   #eef3eb;
+  --amber:      #c5731a;
+  --amber-soft: #fbf0e0;
+  --border:     rgba(184,137,42,0.18);
+  --border2:    rgba(26,22,18,0.08);
+  --shadow:     0 1px 12px rgba(26,22,18,0.06), 0 4px 24px rgba(26,22,18,0.04);
+  --shadow-lg:  0 8px 40px rgba(26,22,18,0.12);
+  --radius:     14px;
+  --radius-sm:  10px;
+  --font-disp:  'Cormorant Garamond', Georgia, serif;
+  --font-body:  'DM Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100dvh;
+  line-height: 1.5;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 24px);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+a { color: inherit; text-decoration: none; }
+
+/* ═══ STICKY HEADER ═══ */
+#sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250,248,245,0.92);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border-bottom: 1px solid var(--border);
+  padding: 11px 20px 10px;
+}
+.header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.header-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.header-eyebrow {
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 4px;
+}
+.header-title {
+  font-family: var(--font-disp);
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+#live-clock {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink2);
+  letter-spacing: 0.02em;
+}
+#trip-day-badge {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 99px;
+  background: var(--red);
+  color: white;
+  white-space: nowrap;
+}
+#trip-day-badge.upcoming { background: var(--gold); }
+#trip-day-badge.ended { background: var(--ink3); }
+
+/* ═══ HERO ═══ */
+.hero {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 36px 24px 28px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+}
+.hero-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.hero-title {
+  font-family: var(--font-disp);
+  font-size: clamp(44px, 11vw, 62px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.hero-subtitle {
+  font-family: var(--font-disp);
+  font-style: italic;
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--ink2);
+  margin-bottom: 22px;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 22px;
+  margin-bottom: 22px;
+  font-size: 13px;
+  color: var(--ink3);
+}
+.hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.hero-meta-item strong { color: var(--ink); font-weight: 500; }
+.hero-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+  margin: 18px auto;
+}
+.hero-guests {
+  font-family: var(--font-disp);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+.hero-guests-note {
+  font-size: 11px;
+  font-style: italic;
+  color: var(--ink3);
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+
+/* ═══ TAB BAR ═══ */
+.tab-bar {
+  position: sticky;
+  top: 51px;
+  z-index: 90;
+  background: rgba(250,248,245,0.92);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+}
+.tab-bar-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0 12px;
+}
+.tab-bar-inner::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex-shrink: 0;
+  padding: 14px 14px 13px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--ink3);
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--ink); }
+.tab-btn.active {
+  color: var(--ink);
+  border-bottom-color: var(--red);
+}
+
+/* ═══ TAB PANELS ═══ */
+.tab-panel {
+  display: none;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 18px;
+  animation: fadeIn 0.4s ease;
+}
+.tab-panel.active { display: block; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══ SECTION HEADINGS ═══ */
+.section-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.section-title {
+  font-family: var(--font-disp);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+  letter-spacing: -0.005em;
+}
+.section-subtitle {
+  font-family: var(--font-disp);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink3);
+  margin-bottom: 22px;
+}
+
+/* ═══ ALERT BANNER ═══ */
+.alert-banner {
+  background: linear-gradient(135deg, var(--amber-soft), #fef6e8);
+  border: 1px solid rgba(197,115,26,0.2);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 22px;
+}
+.alert-banner.severe {
+  background: linear-gradient(135deg, var(--red-soft), #fdf0ee);
+  border-color: rgba(184,52,31,0.25);
+}
+.alert-banner-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.alert-banner.severe .alert-banner-title { color: var(--red); }
+.alert-item {
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.5;
+  padding: 3px 0;
+  display: flex;
+  gap: 8px;
+}
+.alert-dot { color: var(--gold); flex-shrink: 0; }
+
+/* ═══ DAY CARD ═══ */
+.day-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s;
+}
+.day-card.is-today {
+  border-color: var(--red);
+  border-width: 2px;
+  box-shadow: 0 2px 24px rgba(184,52,31,0.12);
+}
+.day-header {
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.day-header:hover { background: var(--warm); }
+.day-header-left { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.day-num {
+  font-family: var(--font-disp);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  min-width: 38px;
+  line-height: 1.2;
+}
+.day-num strong {
+  display: block;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0;
+  font-style: italic;
+}
+.day-meta { min-width: 0; }
+.day-date {
+  font-family: var(--font-disp);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.005em;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+.day-city {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink3);
+}
+.day-city.tokyo { color: var(--red); }
+.day-city.kyoto { color: var(--tea); }
+.day-toggle {
+  font-size: 18px;
+  color: var(--ink3);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.day-card.expanded .day-toggle { transform: rotate(180deg); }
+.is-today-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 99px;
+  background: var(--red);
+  color: white;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.day-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+.day-card.expanded .day-body {
+  max-height: 50000px;
+}
+.day-content {
+  padding: 4px 18px 20px;
+  border-top: 1px solid var(--border2);
+}
+
+/* ═══ WEATHER STRIP ═══ */
+.weather-strip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  margin: 14px 0;
+  background: var(--paper2);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--ink2);
+}
+.weather-icon { font-size: 24px; line-height: 1; }
+.weather-temps { font-weight: 500; }
+.weather-desc { color: var(--ink3); font-size: 12px; }
+.weather-rain { color: var(--indigo); font-size: 12px; margin-left: auto; }
+.weather-loading { color: var(--ink3); font-style: italic; font-size: 12px; }
+
+/* ═══ HOTEL BLOCK ═══ */
+.hotel-block {
+  margin: 14px 0;
+  padding: 13px 14px;
+  background: var(--paper2);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--gold);
+}
+.hotel-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 3px;
+}
+.hotel-name {
+  font-family: var(--font-disp);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.005em;
+}
+.hotel-note {
+  font-size: 12px;
+  color: var(--ink3);
+  margin-top: 2px;
+}
+
+/* ═══ STOPS / TIMELINE ═══ */
+.stop {
+  position: relative;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border2);
+}
+.stop:last-child { border-bottom: none; padding-bottom: 4px; }
+.stop-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.stop-time {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--red);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+.stop-type {
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink4);
+}
+.stop-title {
+  font-family: var(--font-disp);
+  font-size: 21px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.005em;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.stop-subtitle {
+  font-family: var(--font-disp);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink3);
+  margin-bottom: 8px;
+}
+.stop-style {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--ink3);
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  margin-bottom: 8px;
+  margin-right: 4px;
+}
+.stop-status {
+  display: inline-block;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 99px;
+  margin-bottom: 8px;
+  margin-right: 4px;
+}
+/* Status badge colours mirror the Happy Camper canvas spreadsheet legend */
+.status-confirmed   { background: #e6f3df; color: #3d6b32; }   /* green  · confirmed     */
+.status-requested   { background: #dff5f5; color: #1f6b6b; }   /* cyan   · requested     */
+.status-walk-in     { background: #fdf3d3; color: #8a6a14; }   /* yellow · walk-in only  */
+.status-self-booked { background: #fbe3e3; color: #a04040; }   /* pink   · self booked   */
+.status-suggestion  { background: #e1edf7; color: #2a5a85; }   /* blue   · suggestion    */
+.stop-desc {
+  font-size: 13.5px;
+  color: var(--ink2);
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+.stop-note {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--ink3);
+  line-height: 1.5;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  border-left: 2px solid var(--gold-soft);
+  background: var(--warm);
+  border-radius: 2px;
+}
+
+/* ═══ STOP ACTIONS ═══ */
+.stop-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 99px;
+  background: var(--paper2);
+  color: var(--ink2);
+  border: 1px solid var(--border2);
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:hover { background: white; border-color: var(--gold); color: var(--ink); }
+.btn:active { transform: scale(0.97); }
+.btn-primary {
+  background: var(--ink);
+  color: white;
+  border-color: var(--ink);
+}
+.btn-primary:hover { background: var(--ink2); color: white; }
+.btn-icon { font-size: 13px; line-height: 1; }
+
+/* ═══ DISCOVER ═══ */
+.discover-section { margin-bottom: 32px; }
+.discover-city {
+  font-family: var(--font-disp);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 2px;
+  letter-spacing: -0.005em;
+}
+.discover-city-meta {
+  font-family: var(--font-disp);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink3);
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.discover-group {
+  margin-bottom: 22px;
+}
+.discover-group-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.discover-group-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.discover-item {
+  background: white;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-sm);
+  padding: 13px 14px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: border-color 0.15s;
+}
+.discover-item:hover { border-color: var(--gold); }
+.discover-item-info { min-width: 0; flex: 1; }
+.discover-item-name {
+  font-family: var(--font-disp);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.005em;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+.discover-item-meta {
+  font-size: 11.5px;
+  color: var(--ink3);
+  line-height: 1.4;
+}
+.discover-item .btn {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  font-size: 11px;
+}
+
+/* ═══ WISHLIST ═══ */
+.wishlist-group { margin-bottom: 22px; }
+.wishlist-group-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wishlist-group-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.wishlist-item {
+  background: white;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.wishlist-item-name {
+  font-family: var(--font-disp);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* ═══ DIET TAB ═══ */
+.diet-cta-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 14px;
+  background: linear-gradient(135deg, #fef9f0, #fdf3e3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.diet-cta-title {
+  font-family: var(--font-disp);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.diet-cta-desc {
+  font-size: 12.5px;
+  color: var(--ink3);
+  line-height: 1.5;
+}
+.diet-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background: var(--ink);
+  color: white;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-top: 6px;
+  border: none;
+  width: 100%;
+}
+.diet-cta-btn:active { transform: scale(0.98); }
+
+.diet-person-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+}
+.diet-person-card.severe { border-color: var(--red); border-width: 2px; }
+.diet-person-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.diet-person-name {
+  font-family: var(--font-disp);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.005em;
+}
+.diet-person-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 99px;
+  background: var(--paper2);
+  color: var(--ink3);
+}
+.diet-person-tag.severe { background: var(--red); color: white; }
+.diet-person-tag.child  { background: var(--indigo-soft); color: var(--indigo); }
+
+.diet-section-title {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-top: 14px;
+  margin-bottom: 8px;
+}
+.diet-section-title.severe { color: var(--red); }
+.diet-section-title.avoid  { color: var(--amber); }
+.diet-section-title.dislike { color: var(--ink3); }
+
+.diet-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.diet-chip {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 11px;
+  border-radius: 99px;
+  background: var(--paper2);
+  color: var(--ink2);
+  border: 1px solid var(--border2);
+}
+.diet-chip.severe {
+  background: var(--red);
+  color: white;
+  border-color: var(--red);
+}
+.diet-chip.avoid {
+  background: var(--amber-soft);
+  color: var(--amber);
+  border-color: rgba(197,115,26,0.3);
+}
+
+/* ═══ MODAL ═══ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26,22,18,0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  animation: fadeIn 0.25s ease;
+}
+.modal-overlay.active { display: flex; }
+.modal {
+  background: var(--paper);
+  width: 100%;
+  max-width: 600px;
+  max-height: 92dvh;
+  border-radius: 22px 22px 0 0;
+  overflow-y: auto;
+  padding: 18px 22px calc(28px + env(safe-area-inset-bottom));
+  animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+.modal-grabber {
+  width: 38px;
+  height: 4px;
+  background: var(--ink4);
+  border-radius: 99px;
+  margin: 0 auto 14px;
+  opacity: 0.4;
+}
+.modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+.modal-title {
+  font-family: var(--font-disp);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.modal-title-jp {
+  font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
+  font-size: 16px;
+  color: var(--ink2);
+  margin-top: 4px;
+}
+.modal-close {
+  font-size: 26px;
+  color: var(--ink3);
+  background: var(--paper2);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.modal-intro {
+  font-size: 13px;
+  color: var(--ink3);
+  line-height: 1.55;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+.jp-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-bottom: 12px;
+}
+.jp-card.severe {
+  border-color: var(--red);
+  border-width: 2px;
+  background: linear-gradient(180deg, #fff, #fdf6f4);
+}
+.jp-card-name {
+  font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.jp-card-name-en {
+  font-size: 12px;
+  color: var(--ink3);
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+.jp-card-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  margin-top: 10px;
+}
+.jp-card-label.severe { color: var(--red); }
+.jp-card-label.avoid  { color: var(--amber); }
+.jp-text {
+  font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
+  font-size: 16px;
+  color: var(--ink);
+  line-height: 1.7;
+}
+.jp-text-list {
+  font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
+  font-size: 15px;
+  color: var(--ink2);
+  line-height: 1.8;
+}
+.jp-text-list strong {
+  color: var(--red);
+  font-weight: 600;
+}
+.modal-footer-note {
+  font-size: 11.5px;
+  font-style: italic;
+  color: var(--ink3);
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border2);
+}
+
+/* ═══ UTILITIES ═══ */
+.util-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+}
+.util-card-title {
+  font-family: var(--font-disp);
+  font-size: 21px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.util-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.converter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.converter-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.converter-input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-appearance: none;
+  appearance: none;
+}
+.converter-input:focus { outline: 2px solid var(--gold); outline-offset: -1px; }
+.converter-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink3);
+  letter-spacing: 0.06em;
+  min-width: 40px;
+}
+.converter-rate {
+  font-size: 11px;
+  color: var(--ink3);
+  text-align: center;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.util-list {
+  list-style: none;
+  padding: 0;
+}
+.util-list li {
+  font-size: 13.5px;
+  color: var(--ink2);
+  padding: 6px 0 6px 16px;
+  position: relative;
+  line-height: 1.55;
+}
+.util-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 16px;
+  top: 4px;
+}
+.util-list li strong { color: var(--ink); font-weight: 500; }
+
+.etiquette-block { margin-top: 14px; }
+.etiquette-block:first-child { margin-top: 0; }
+.etiquette-block-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+.etiquette-block-title.critical {
+  color: white;
+  background: var(--red);
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 99px;
+  letter-spacing: 0.14em;
+}
+.etiquette-block p {
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+/* ═══ EMERGENCY ═══ */
+.sos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.sos-tile {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+.sos-tile.critical {
+  background: var(--red);
+  color: white;
+  border-color: var(--red);
+}
+.sos-tile:active { transform: scale(0.97); }
+.sos-icon { font-size: 26px; }
+.sos-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.sos-number {
+  font-family: var(--font-disp);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.sos-tile.critical .sos-label { opacity: 0.9; }
+
+.contact-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.contact-info { min-width: 0; flex: 1; }
+.contact-name {
+  font-family: var(--font-disp);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.005em;
+}
+.contact-role {
+  font-size: 11px;
+  color: var(--ink3);
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+.contact-number {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--red);
+  font-variant-numeric: tabular-nums;
+  margin-top: 4px;
+}
+.contact-action {
+  flex-shrink: 0;
+  padding: 9px 12px;
+  font-size: 12px;
+}
+
+/* ═══ TOAST ═══ */
+#copy-toast {
+  position: fixed;
+  bottom: calc(28px + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%) translateY(40px);
+  background: var(--ink);
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 99px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 999;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(26,22,18,0.25);
+}
+#copy-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ═══ FOOTER ═══ */
+.app-footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 24px 16px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.footer-mark {
+  font-family: var(--font-disp);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink3);
+  margin-bottom: 4px;
+}
+.footer-tag {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ═══ RESPONSIVE ═══ */
+@media (min-width: 600px) {
+  .sos-grid { grid-template-columns: repeat(4, 1fr); }
+  .header-title { font-size: 24px; }
+  .tab-btn { padding: 14px 18px 13px; font-size: 13.5px; }
+}
+@media (min-width: 720px) {
+  .tab-panel { padding: 28px 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ════════════════════════════════════════════════════════
+     STICKY HEADER · Live JST clock + Trip day badge
+     ════════════════════════════════════════════════════════ -->
+<header id="sticky-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <span class="header-eyebrow">Happy Camper</span>
+      <span class="header-title">Japan · 2026</span>
+    </div>
+    <div class="header-right">
+      <div id="live-clock" aria-label="Current time in Tokyo">—</div>
+      <div id="trip-day-badge">Loading…</div>
+    </div>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════════════════════
+     HERO
+     ════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-eyebrow">Private Travel · 2026</div>
+  <h1 class="hero-title">Japan</h1>
+  <div class="hero-subtitle">Tokyo · Kyoto · Tokyo</div>
+  <div class="hero-meta">
+    <div class="hero-meta-item">🗓 <strong>23 May – 2 Jun 2026</strong></div>
+    <div class="hero-meta-item">🌙 <strong>10 nights</strong></div>
+    <div class="hero-meta-item">👥 <strong>5 Travellers</strong></div>
+  </div>
+  <div class="hero-divider"></div>
+  <div class="hero-guests">Tatham &amp; Schiller</div>
+  <div class="hero-guests-note">A Private Journey curated by Happy Camper</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     TAB BAR
+     ════════════════════════════════════════════════════════ -->
+<nav class="tab-bar" aria-label="Sections">
+  <div class="tab-bar-inner">
+    <button class="tab-btn active" data-tab="itinerary">Itinerary</button>
+    <button class="tab-btn" data-tab="discover">Discover</button>
+    <button class="tab-btn" data-tab="wishlist">Wishlist</button>
+    <button class="tab-btn" data-tab="diet">Diet</button>
+    <button class="tab-btn" data-tab="utilities">Utilities</button>
+    <button class="tab-btn" data-tab="emergency">Emergency</button>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════
+     TAB: ITINERARY
+     ════════════════════════════════════════════════════════ -->
+<main id="tab-itinerary" class="tab-panel active">
+  <div class="section-eyebrow">Day by day</div>
+  <h2 class="section-title">Itinerary</h2>
+  <p class="section-subtitle">Tap any day to expand · today auto-opens</p>
+
+  <div class="alert-banner">
+    <div class="alert-banner-title">⚑ Booking Status · at a glance</div>
+    <div class="alert-item"><span class="alert-dot" style="color:var(--tea);">●</span><span><strong>Confirmed:</strong> Sushi Nakano · Nakahara (PDR) · Muni · Ukai-tei Ginza (PDR) · Kyoto guide</span></div>
+    <div class="alert-item"><span class="alert-dot" style="color:var(--indigo);">●</span><span><strong>Requested:</strong> Tokyo guided tour (Tsukiji)</span></div>
+    <div class="alert-item"><span class="alert-dot" style="color:#6b4a8c;">●</span><span><strong>Suggestions:</strong> UMAYA · Tenyuu · Nakame no Teppen · Setsugekka — Iko is working to firm these up</span></div>
+    <div class="alert-item"><span class="alert-dot">●</span><span>Once confirmed, reservations are <strong>firm commitments</strong>. Several restaurants are <strong>cash only</strong> — carry ¥50–80,000 per person.</span></div>
+  </div>
+
+  <div id="days-container"></div>
+</main>
+
+<!-- ════════════════════════════════════════════════════════
+     TAB: DISCOVER (Tokyo & Kyoto · Shopping + Coffee)
+     ════════════════════════════════════════════════════════ -->
+<section id="tab-discover" class="tab-panel">
+  <div class="section-eyebrow">Curated by Happy Camper</div>
+  <h2 class="section-title">Discover</h2>
+  <p class="section-subtitle">Shopping &amp; coffee · Iko's hand-picked favourites</p>
+  <div id="discover-container"></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     TAB: WISHLIST
+     ════════════════════════════════════════════════════════ -->
+<section id="tab-wishlist" class="tab-panel">
+  <div class="section-eyebrow">From your brief</div>
+  <h2 class="section-title">Wishlist</h2>
+  <p class="section-subtitle">Restaurants, experiences &amp; shops Casey &amp; Anthony asked us to consider</p>
+  <div id="wishlist-container"></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     TAB: DIET
+     ════════════════════════════════════════════════════════ -->
+<section id="tab-diet" class="tab-panel">
+  <div class="section-eyebrow">Submitted by guests</div>
+  <h2 class="section-title">Dietary</h2>
+  <p class="section-subtitle">Each restaurant has been briefed in advance. This is your reference.</p>
+
+  <div class="diet-cta-bar">
+    <div class="diet-cta-title">日本語カード · Show the chef</div>
+    <div class="diet-cta-desc">A clean Japanese summary you can show at any counter. Especially important for Anthony's bee pollen and honey allergy.</div>
+    <button class="diet-cta-btn" onclick="openDietModal()">
+      <span>🇯🇵</span>
+      <span>Open Japanese Card for the Chef</span>
+    </button>
+  </div>
+
+  <div id="diet-container"></div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     TAB: UTILITIES
+     ════════════════════════════════════════════════════════ -->
+<section id="tab-utilities" class="tab-panel">
+  <div class="section-eyebrow">Practical</div>
+  <h2 class="section-title">Utilities</h2>
+  <p class="section-subtitle">Currency, etiquette &amp; everything you need on the ground</p>
+
+  <!-- Currency converter -->
+  <div class="util-card">
+    <div class="util-card-title"><span class="util-icon">¥</span> Currency Converter</div>
+    <div class="converter">
+      <div class="converter-row">
+        <span class="converter-label">JPY</span>
+        <input type="number" class="converter-input" id="jpy-input" placeholder="10000" inputmode="numeric">
+      </div>
+      <div class="converter-row">
+        <span class="converter-label">USD</span>
+        <input type="number" class="converter-input" id="usd-input" placeholder="100" inputmode="decimal">
+      </div>
+      <div class="converter-rate" id="rate-display">1 USD ≈ ¥152.65</div>
+    </div>
+  </div>
+
+  <!-- Dining Etiquette -->
+  <div class="util-card">
+    <div class="util-card-title"><span class="util-icon">⌬</span> Dining Etiquette</div>
+
+    <div class="etiquette-block">
+      <div class="etiquette-block-title critical">⚠ Fragrance · Critical</div>
+      <p>The single most important point at high-end Japanese restaurants. Even a trace of perfume disrupts the chef's work and the experience for other diners at the counter.</p>
+      <ul class="util-list">
+        <li><strong>No perfume or cologne</strong> on dining days.</li>
+        <li><strong>No scented hair products</strong> — shampoo, spray, styling.</li>
+        <li><strong>No smoking beforehand.</strong></li>
+        <li><strong>Laundry detergent</strong> — wash dining clothes in unscented detergent if possible.</li>
+        <li><strong>No strong mints or gum.</strong></li>
+      </ul>
+    </div>
+
+    <div class="etiquette-block">
+      <div class="etiquette-block-title">Punctuality</div>
+      <p>At omakase counters the meal begins simultaneously for all guests. Arriving late disrupts the chef's timing for everyone. Allow buffer time — many restaurants are tucked into quiet streets.</p>
+    </div>
+
+    <div class="etiquette-block">
+      <div class="etiquette-block-title">Attire</div>
+      <p>Smart-casual is entirely appropriate; a jacket or tie is not required. A collared shirt is a respectful choice at omakase counters. Comfortable shoes — you will walk a great deal.</p>
+    </div>
+
+    <div class="etiquette-block">
+      <div class="etiquette-block-title">At the counter</div>
+      <p>The hand not holding chopsticks should rest on the table or lightly support a bowl. Sushi counters are often crafted from a single piece of precious wood — please remove rings, bracelets, and watches before sitting.</p>
+    </div>
+
+    <div class="etiquette-block">
+      <div class="etiquette-block-title">Tipping</div>
+      <p>Tipping is not customary and can be awkward. The best appreciation is a sincere <em>"Gochisousama deshita"</em> — "Thank you for the meal." If tipping in other contexts, avoid amounts beginning with 4 — the number is associated with death.</p>
+    </div>
+  </div>
+
+  <!-- Getting around -->
+  <div class="util-card">
+    <div class="util-card-title"><span class="util-icon">⇄</span> Getting Around · Suica</div>
+    <p style="font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:8px;">Add a Suica commuter pass to your mobile wallet (one per person) — covers subway, bus and train across Tokyo, Kyoto, and most major cities.</p>
+    <ul class="util-list">
+      <li>Open your Wallet app, tap '+', search for <strong>Suica</strong> under Transit Cards.</li>
+      <li>Load funds — the card appears instantly.</li>
+      <li>Tap your phone at the turnstile gate to pay. Top up via your linked card when low.</li>
+    </ul>
+  </div>
+
+  <!-- Money -->
+  <div class="util-card">
+    <div class="util-card-title"><span class="util-icon">¥</span> Money &amp; Cash</div>
+    <p style="font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:8px;">Japan remains a cash-based society. Carry larger amounts of yen — it is entirely common and safe.</p>
+    <ul class="util-list">
+      <li>ATMs at <strong>7-Eleven</strong> and <strong>Japan Post</strong> accept international cards.</li>
+      <li>Most other ATMs do not work with foreign cards.</li>
+      <li>Currency exchange available at airports, hotels and select post offices.</li>
+      <li>Some sushi counters and most pottery studios are <strong>cash only</strong>.</li>
+    </ul>
+  </div>
+
+  <!-- eSIM -->
+  <div class="util-card">
+    <div class="util-card-title"><span class="util-icon">◐</span> Connectivity · eSIM</div>
+    <p style="font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:8px;">We recommend activating an eSIM before departure. Japan's 4G and 5G coverage is excellent throughout Tokyo and Kyoto.</p>
+    <ul class="util-list">
+      <li><strong>Airalo</strong> — competitive rates, wide coverage, easy in-app management.</li>
+      <li><strong>Holafly</strong> — unlimited data options, strong for short-term travel.</li>
+      <li><strong>Ubigi</strong> — reliable performance, quick smartphone activation.</li>
+    </ul>
+  </div>
+
+  <!-- Electricity -->
+  <div class="util-card">
+    <div class="util-card-title"><span class="util-icon">⚡</span> Electricity</div>
+    <p style="font-size:13px;color:var(--ink2);line-height:1.6;">Japan's voltage is <strong>100V at 50/60 Hz</strong>. North American travellers do not need a converter, but sockets are two-pronged — bring a 3-to-2-prong adapter.</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     TAB: EMERGENCY
+     ════════════════════════════════════════════════════════ -->
+<section id="tab-emergency" class="tab-panel">
+  <div class="section-eyebrow">When you need it</div>
+  <h2 class="section-title">Emergency</h2>
+  <p class="section-subtitle">Iko is available 24/7 throughout your stay</p>
+
+  <div class="sos-grid">
+    <a href="tel:119" class="sos-tile critical">
+      <div class="sos-icon">⚕</div>
+      <div class="sos-label">Ambulance · Fire</div>
+      <div class="sos-number">119</div>
+    </a>
+    <a href="tel:110" class="sos-tile critical">
+      <div class="sos-icon">⚐</div>
+      <div class="sos-label">Police</div>
+      <div class="sos-number">110</div>
+    </a>
+    <a href="tel:118" class="sos-tile">
+      <div class="sos-icon">⚓</div>
+      <div class="sos-label">Coast Guard</div>
+      <div class="sos-number">118</div>
+    </a>
+    <a href="tel:+81335035451" class="sos-tile">
+      <div class="sos-icon">☎</div>
+      <div class="sos-label">Tourist Hotline</div>
+      <div class="sos-number" style="font-size:14px;line-height:1.3;">050-3816-2787</div>
+    </a>
+  </div>
+
+  <div class="section-eyebrow" style="margin-top: 22px;">Happy Camper</div>
+  <h3 class="section-title" style="font-size:22px;margin-bottom:14px;">Your Hosts</h3>
+
+  <div class="contact-card">
+    <div class="contact-info">
+      <div class="contact-name">Iko</div>
+      <div class="contact-role">Tokyo host · all Tokyo days</div>
+      <div class="contact-number">+81 90 6158 9006</div>
+    </div>
+    <a href="tel:+819061589006" class="btn btn-primary contact-action">Call</a>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-info">
+      <div class="contact-name">Kevin</div>
+      <div class="contact-role">Kyoto host · 27–28 May</div>
+      <div class="contact-number">+81 90 6158 9006</div>
+    </div>
+    <a href="tel:+819061589006" class="btn btn-primary contact-action">Call</a>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-info">
+      <div class="contact-name">Gerhard</div>
+      <div class="contact-role">Happy Camper · founder · Japan number</div>
+      <div class="contact-number">+81 80 6989 2107</div>
+    </div>
+    <a href="tel:+818069892107" class="btn btn-primary contact-action">Call</a>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-info">
+      <div class="contact-name">Happy Camper</div>
+      <div class="contact-role">General assistance · email</div>
+      <div class="contact-number">hello@happycamper.food</div>
+    </div>
+    <a href="mailto:hello@happycamper.food" class="btn btn-primary contact-action">Email</a>
+  </div>
+
+  <div class="section-eyebrow" style="margin-top: 26px;">Medical</div>
+  <h3 class="section-title" style="font-size:22px;margin-bottom:14px;">English-Speaking Hospitals</h3>
+
+  <div class="contact-card">
+    <div class="contact-info">
+      <div class="contact-name">Tokyo Midtown Clinic</div>
+      <div class="contact-role">Roppongi, Tokyo · 24h English support</div>
+      <div class="contact-number">+81 3-5413-7912</div>
+    </div>
+    <a href="tel:+81354137912" class="btn contact-action">Call</a>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-info">
+      <div class="contact-name">St. Luke's International Hospital</div>
+      <div class="contact-role">Tsukiji, Tokyo</div>
+      <div class="contact-number">+81 3-3541-5151</div>
+    </div>
+    <a href="tel:+81335415151" class="btn contact-action">Call</a>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-info">
+      <div class="contact-name">Kyoto University Hospital</div>
+      <div class="contact-role">Sakyo Ward, Kyoto</div>
+      <div class="contact-number">+81 75-751-3111</div>
+    </div>
+    <a href="tel:+81757513111" class="btn contact-action">Call</a>
+  </div>
+
+  <div class="section-eyebrow" style="margin-top: 26px;">Embassy</div>
+  <h3 class="section-title" style="font-size:22px;margin-bottom:14px;">US Embassy &amp; Consulates</h3>
+
+  <div class="contact-card">
+    <div class="contact-info">
+      <div class="contact-name">US Embassy Tokyo</div>
+      <div class="contact-role">Akasaka, Minato-ku</div>
+      <div class="contact-number">+81 3-3224-5000</div>
+    </div>
+    <a href="tel:+81332245000" class="btn contact-action">Call</a>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-info">
+      <div class="contact-name">US Consulate Osaka</div>
+      <div class="contact-role">Nearest to Kyoto</div>
+      <div class="contact-number">+81 6-6315-5900</div>
+    </div>
+    <a href="tel:+81663155900" class="btn contact-action">Call</a>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     COPY TOAST
+     ════════════════════════════════════════════════════════ -->
+<div id="copy-toast" role="status" aria-live="polite">Copied ✓</div>
+
+<!-- ════════════════════════════════════════════════════════
+     DIET MODAL (Japanese chef card)
+     ════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="diet-modal" onclick="if(event.target===this)closeDietModal()">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-grabber"></div>
+    <div class="modal-head">
+      <div>
+        <div class="modal-title" id="modal-title">For the Chef</div>
+        <div class="modal-title-jp">シェフへのご案内</div>
+      </div>
+      <button class="modal-close" onclick="closeDietModal()" aria-label="Close">×</button>
+    </div>
+    <div class="modal-intro">
+      Show this card at the counter on arrival. The most critical line is at the top — please bring this to the chef's attention before service begins.
+    </div>
+    <div id="modal-jp-content"></div>
+    <div class="modal-footer-note">
+      ご親切に対応していただき、誠にありがとうございます。<br>
+      <em>Thank you sincerely for your kind accommodation.</em>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════════════════════════ -->
+<footer class="app-footer">
+  <div class="footer-mark">Unlocking Japan, one thoughtful moment at a time.</div>
+  <div class="footer-tag">Happy Camper · Tokyo · Kyoto · London</div>
+</footer>
+
+<script>
+/* ════════════════════════════════════════════════════════════
+   ▌▌  DATA MODEL — Edit this block to update the itinerary
+   ════════════════════════════════════════════════════════════
+   All trip-specific data lives in TRIP. Nothing else needs to
+   change between trips of the same template.
+   ════════════════════════════════════════════════════════════ */
+
+const TRIP = {
+  tripTitle: "Japan 2026 · Tatham & Schiller",
+  startDate: "2026-05-23",
+  endDate:   "2026-06-02",
+  travelers: ["Casey Tatham", "Yeva Tatham", "Max Tatham (4)", "Anthony Schiller", "Ridenour Schiller"],
+  tz: "Asia/Tokyo",
+
+  /* Hotels by date — used to render hotel block per day */
+  hotels: {
+    okura:   { name: "Four Seasons Hotel Tokyo at Otemachi", city: "Tokyo",
+               address: "1-2-1 Otemachi, Chiyoda City, Tokyo 100-0004",
+               mapsQuery: "Four Seasons Hotel Tokyo at Otemachi",
+               lat: 35.6870, lng: 139.7660 },
+    kyoto:   { name: "Hotel TBC · Kyoto", city: "Kyoto",
+               address: "Kyoto",
+               mapsQuery: "luxury hotels Kyoto",
+               lat: 35.0116, lng: 135.7681,
+               note: "Final Kyoto hotel to be confirmed by Iko" },
+    janu:    { name: "Janu Tokyo", city: "Tokyo",
+               address: "2-7-2 Azabudai, Minato City, Tokyo 106-0041",
+               mapsQuery: "Janu Tokyo Azabudai Hills",
+               lat: 35.6587, lng: 139.7430 }
+  },
+
+  /* Days — each with stops, hotel and notes */
+  days: [
+    {
+      date: "2026-05-23",
+      city: "Tokyo",
+      hotel: "okura",
+      notes: "Arrival day · settle into the Four Seasons · UMAYA welcome dinner (suggestion).",
+      stops: [
+        { time: "15:00", title: "Haneda Airport (HND)", type: "Arrival",
+          locationName: "Haneda Airport · International Arrivals",
+          address: "Haneda Airport, Ota City, Tokyo",
+          mapsQuery: "Haneda Airport International Terminal",
+          desc: "Drivers waiting after customs with a Happy Camper sign. Transfer to the Four Seasons Otemachi is approximately 30–45 minutes depending on traffic.",
+          note: "A WhatsApp group with your drivers will be active before landing."
+        },
+        { time: "19:00", title: "UMAYA", type: "Welcome Dinner", style: "Izakaya · Yakitori",
+          status: "suggestion",
+          locationName: "UMAYA Izakaya",
+          address: "Tokyo",
+          mapsQuery: "UMAYA izakaya Tokyo",
+          desc: "An easy, atmospheric first dinner — a relaxed izakaya opening for a long-haul arrival day. Currently held as a suggestion; Iko will confirm the branch and timing on the day.",
+          note: "Suggestion only — Iko will firm up location via WhatsApp."
+        }
+      ]
+    },
+    {
+      date: "2026-05-24",
+      city: "Tokyo",
+      hotel: "okura",
+      notes: "Full first day in Tokyo · morning programme to be confirmed with Iko.",
+      stops: [
+        { time: "Morning", title: "Tokyo · with Iko", type: "Free / Discover",
+          locationName: "Tokyo",
+          address: "Tokyo",
+          mapsQuery: "Tokyo",
+          desc: "First full day in Tokyo. Iko will adjust the morning around the family's energy and the children's rhythm. Strong options include the Imperial Palace East Gardens, a private Ginza walk, or starting at teamLab Borderless."
+        },
+        { time: "19:00", title: "Sushi Nakano", type: "Dinner",
+          style: "Sushi · Omakase",
+          status: "confirmed",
+          locationName: "Sushi Nakano",
+          address: "Tokyo",
+          mapsQuery: "Sushi Nakano Tokyo",
+          desc: "Confirmed for 3 guests at 19:00. A precise Edomae omakase counter — one of Tokyo's well-kept sushi addresses.",
+          note: "3 pax · No fragrance · Confirmed and paid."
+        }
+      ]
+    },
+    {
+      date: "2026-05-25",
+      city: "Tokyo",
+      hotel: "okura",
+      notes: "Tokyo guided tour with Iko · centred on Tsukiji.",
+      stops: [
+        { time: "Morning", title: "Tokyo Guided Tour · Tsukiji Fish Market", type: "Guided Tour",
+          status: "requested",
+          locationName: "Tsukiji Outer Market",
+          address: "4 Chome Tsukiji, Chuo City, Tokyo 104-0045",
+          mapsQuery: "Tsukiji Outer Market Tokyo",
+          desc: "A relaxed guided morning with Iko around the historic Tsukiji outer market — grilled tamago, tuna stalls, dashi shops, ceramics and the legendary knife dealers. The atmosphere is unhurried and at street level, with countless small tastings along the lanes. A favourite for families.",
+          note: "Best between 09:00 and 11:00 — Iko will set the exact start time."
+        },
+        { time: "~12:30", title: "Tsukiji Lunch · Iko's pick", type: "Lunch",
+          style: "Sushi / Donburi / Street food",
+          status: "walk-in",
+          locationName: "Tsukiji Outer Market · Tokyo",
+          address: "Tsukiji, Chuo City, Tokyo",
+          mapsQuery: "Tsukiji Outer Market food Tokyo",
+          desc: "Iko will choose a counter inside the market — uni rice bowls, sushi at Sushizanmai's flagship, grilled scallops, or the famed tuna-cheek skewers. Walk-in only — no reservations in this area."
+        },
+        { time: "18:00", title: "Nakahara · PDR", type: "Dinner",
+          style: "Yakiniku · Owner-chef counter",
+          status: "confirmed",
+          locationName: "Yakiniku Nakahara",
+          address: "Tokyo",
+          mapsQuery: "Yakiniku Nakahara Tokyo",
+          desc: "Considered one of the very top yakiniku restaurants in Japan. The owner-chef personally grills every course at the counter — but you have a private dining room confirmed for 5 guests at 18:00, which works beautifully with the children.",
+          note: "5 pax · Private room confirmed · No beef tongue or offal pre-arranged."
+        }
+      ]
+    },
+    {
+      date: "2026-05-26",
+      city: "Tokyo",
+      hotel: "okura",
+      notes: "Final Tokyo day before Kyoto · luggage forwarding · free evening.",
+      stops: [
+        { time: "Morning", title: "Tokyo · Final Tokyo Day", type: "Discover",
+          locationName: "Tokyo",
+          address: "Tokyo",
+          mapsQuery: "Tokyo",
+          desc: "Iko will tailor the morning. Strong options: Kappabashi for knives and kitchenware, an Aoyama–Omotesando shopping circuit, or one of the Ghibli/Pokémon experiences for Max."
+        },
+        { time: "16:00", title: "Luggage Forwarding · Ta-Q-Bin", type: "Logistics",
+          locationName: "Four Seasons Hotel Tokyo at Otemachi",
+          address: "1-2-1 Otemachi, Chiyoda City",
+          mapsQuery: "Four Seasons Hotel Tokyo at Otemachi",
+          desc: "Hand luggage to the bell desk by 16:00 — Japan's overnight luggage delivery service will move your bags to Kyoto for you. Travel tomorrow with hand luggage only.",
+          note: "Drop by 16:00 sharp · bags arrive in Kyoto ahead of you."
+        },
+        { time: "Evening", title: "Free Evening · Tokyo", type: "Free",
+          locationName: "Tokyo",
+          address: "Tokyo",
+          mapsQuery: "Tokyo Ginza dinner",
+          desc: "Dinner is intentionally open tonight — a quiet evening before the early Shinkansen to Kyoto. Strong walk-in options: the Four Seasons' own restaurants, the Otemachi sky-bar at Pavilion, or a stroll into Ginza. Iko can secure a casual late-evening booking on the day.",
+          note: "Pack hand luggage tonight — bags forward to Kyoto in the afternoon."
+        }
+      ]
+    },
+    {
+      date: "2026-05-27",
+      city: "Kyoto",
+      hotel: "kyoto",
+      notes: "Shinkansen to Kyoto · check-in with Kevin · Restaurant Muni confirmed.",
+      stops: [
+        { time: "Morning", title: "Shinkansen · Tokyo → Kyoto", type: "Travel",
+          locationName: "Tokyo Station",
+          address: "1 Chome Marunouchi, Chiyoda City, Tokyo Station",
+          mapsQuery: "Tokyo Station Shinkansen platform",
+          desc: "Green Car (First Class) on the Nozomi. Luggage already forwarded to Kyoto. A staff member from the Four Seasons will escort the group to the platform.",
+          note: "Seats C & D — right-hand side has Mt Fuji views on a clear day."
+        },
+        { time: "~11:00", title: "Arrival Kyoto · with Kevin", type: "Arrival",
+          locationName: "Kyoto Station",
+          address: "Higashishiokoji Kamadonocho, Shimogyo Ward, Kyoto",
+          mapsQuery: "Kyoto Station",
+          desc: "Kevin — your Kyoto guide — meets the group at the platform exit and accompanies you to the hotel. Born and raised in Kyoto, fluent English, deep local knowledge of hidden shrines and the best light at each hour."
+        },
+        { time: "18:00", title: "Restaurant Muni", type: "Dinner",
+          style: "French · Charcoal & wood-fire grill",
+          status: "confirmed",
+          locationName: "Restaurant Muni · Arashiyama",
+          address: "Susukinobaba-cho 23, Saga-Tenryuji, Ukyo Ward, Kyoto",
+          mapsQuery: "Restaurant Muni Kyoto Arashiyama",
+          desc: "A singular French restaurant built around a one-of-a-kind charcoal and wood-fire grill. Chef Tsuji Takashi's menu changes with what arrives each day — fish from Yaizu, premium wagyu, vegetables from the chef's family farm.",
+          note: "3 pax · 18:00 · counter seating to watch the fire."
+        }
+      ]
+    },
+    {
+      date: "2026-05-28",
+      city: "Kyoto",
+      hotel: "kyoto",
+      notes: "Full Kyoto day with Kevin · early-summer green and hydrangea conditions.",
+      stops: [
+        { time: "09:00", title: "Kyoto Tour with Kevin", type: "Private Tour",
+          style: "4-hour private guided tour",
+          status: "confirmed",
+          locationName: "Kyoto",
+          address: "Kyoto",
+          mapsQuery: "Kyoto",
+          desc: "A confirmed 4-hour private morning with Kevin, tailored around the family's interests. Strong options: Fushimi Inari's vermillion gates, Arashiyama and the bamboo grove, Kinkaku-ji, the Philosopher's Walk, Gion's preserved machiya streets, or a half-day excursion to Nara to see the deer and Todai-ji's great Buddha.",
+          note: "4 hours confirmed · Kevin will shape the route on the morning."
+        },
+        { time: "19:00", title: "Tenyuu", type: "Dinner",
+          style: "Tempura · Counter",
+          status: "suggestion",
+          locationName: "Tenyuu Tempura",
+          address: "Kyoto",
+          mapsQuery: "Tenyuu Tempura Kyoto",
+          desc: "A refined Kyoto tempura counter — currently held as a suggestion. Each piece fried to order and presented the moment it leaves the oil.",
+          note: "Suggestion only · Iko & Kevin will firm a final Kyoto dinner closer to the date."
+        }
+      ]
+    },
+    {
+      date: "2026-05-29",
+      city: "Tokyo",
+      hotel: "janu",
+      notes: "Return to Tokyo · check in to Janu Tokyo · Ukai-tei Ginza confirmed PDR.",
+      stops: [
+        { time: "Morning", title: "Kyoto → Tokyo · Shinkansen", type: "Travel",
+          locationName: "Kyoto Station",
+          address: "Higashishiokoji Kamadonocho, Shimogyo Ward, Kyoto",
+          mapsQuery: "Kyoto Station Shinkansen",
+          desc: "Return Shinkansen to Tokyo. Janu Tokyo at Azabudai Hills — Aman's new luxury sister brand — will be your home for the remaining nights."
+        },
+        { time: "17:30", title: "Ukai-tei Ginza", type: "Early Dinner",
+          style: "Teppanyaki · Premium Wagyu · PDR",
+          status: "confirmed",
+          locationName: "Ukai-tei Ginza · Private Dining Room",
+          address: "Ginza Shochiku Square 11F, 5-15-8 Ginza, Chuo City, Tokyo",
+          mapsQuery: "Ukai-tei Ginza Tokyo",
+          desc: "Confirmed in the Private Dining Room — Tokyo's most theatrical teppanyaki, opulent, intimate, and exceptional wagyu cooked in front of you. Early seating works beautifully after a travel day with the children.",
+          note: "3 pax · 17:30 · PDR confirmed."
+        }
+      ]
+    },
+    {
+      date: "2026-05-30",
+      city: "Tokyo",
+      hotel: "janu",
+      notes: "Free day · Janu spa, art galleries, or quiet Tokyo morning.",
+      stops: [
+        { time: "Open", title: "Free Day · Tokyo", type: "Rest / Discover",
+          locationName: "Janu Tokyo · Azabudai Hills",
+          address: "2-7-2 Azabudai, Minato City, Tokyo",
+          mapsQuery: "Janu Tokyo",
+          desc: "A clear day in Tokyo. Recommended: Janu's wellness floor — one of the city's most ambitious new spas. For Max and family: teamLab Borderless at Azabudai Hills is a short walk. For the parents: gallery hopping through Aoyama and Roppongi, or an exclusive private viewing arranged through Iko.",
+          note: "Speak to Iko in the morning — she will arrange anything bespoke."
+        }
+      ]
+    },
+    {
+      date: "2026-05-31",
+      city: "Tokyo",
+      hotel: "janu",
+      notes: "Tokyo · dinner in Nakameguro (suggestion).",
+      stops: [
+        { time: "Open", title: "Tokyo · with Iko", type: "Discover",
+          locationName: "Tokyo",
+          address: "Tokyo",
+          mapsQuery: "Tokyo",
+          desc: "Open day to be shaped with Iko. Strong candidates: Kappabashi for knives, an Aoyama shopping circuit (Yohei Fukuda, Marquess, Hermes Ginza), or a quieter morning at Nezu Museum."
+        },
+        { time: "19:30", title: "Nakame no Teppen", type: "Dinner",
+          style: "Robatayaki · Izakaya",
+          status: "suggestion",
+          locationName: "Nakame no Teppen",
+          address: "Nakameguro, Tokyo",
+          mapsQuery: "Nakame no Teppen Nakameguro",
+          desc: "Dinner in Nakameguro — currently held as a suggestion. A lively traditional robatayaki izakaya where ingredients are grilled over charcoal directly in front of you. Atmospheric, fun, distinctly Japanese.",
+          note: "Suggestion only · a walk along the Meguro canal beforehand is highly recommended."
+        }
+      ]
+    },
+    {
+      date: "2026-06-01",
+      city: "Tokyo",
+      hotel: "janu",
+      notes: "Final full day in Japan · farewell dinner (suggestion).",
+      stops: [
+        { time: "Open", title: "Final Day · Tokyo", type: "Discover",
+          locationName: "Tokyo",
+          address: "Tokyo",
+          mapsQuery: "Tokyo",
+          desc: "Iko will recommend a final morning programme. Strong options: a final shopping round (Kappabashi, Ginza, Aoyama), a quiet temple morning at Sensoji before crowds, or Janu's spa for a slow start."
+        },
+        { time: "19:00", title: "Setsugekka", type: "Farewell Dinner",
+          style: "Steak · Yakiniku",
+          status: "suggestion",
+          locationName: "Setsugekka",
+          address: "Tokyo",
+          mapsQuery: "Setsugekka Tokyo",
+          desc: "Currently held as a suggestion for the final evening. Operated by the same group behind what is ranked as Japan's number one wagyu kaiseki restaurant — an à la carte steak and yakiniku experience with extreme standards of beef quality. Iko is working to firm this up.",
+          note: "Suggestion only · Iko will confirm closer to the date."
+        }
+      ]
+    },
+    {
+      date: "2026-06-02",
+      city: "Tokyo",
+      hotel: null,
+      notes: "Departure day · evening flight from HND.",
+      stops: [
+        { time: "Day", title: "Final Tokyo Morning · Free", type: "Free",
+          locationName: "Tokyo",
+          address: "Tokyo",
+          mapsQuery: "Tokyo",
+          desc: "Late checkout requested. A free Tokyo day before the evening flight — Iko will help with final lunch, last shopping, or simply Janu's spa."
+        },
+        { time: "21:00", title: "Departure · Haneda (HND)", type: "Departure",
+          locationName: "Haneda Airport",
+          address: "Haneda Airport, Ota City, Tokyo",
+          mapsQuery: "Haneda Airport International Terminal",
+          desc: "Drivers arranged for the airport transfer — Iko will confirm pickup time on the day based on traffic and chosen flight.",
+          note: "Depart hotel approximately 18:00 — to be confirmed."
+        }
+      ]
+    }
+  ]
+};
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  DISCOVER — Tokyo & Kyoto · Shopping + Coffee
+   ════════════════════════════════════════════════════════════ */
+
+const DISCOVER = {
+  tokyo: {
+    title: "Tokyo",
+    subtitle: "The kinetic capital · early-summer rhythm",
+    groups: [
+      {
+        title: "Shopping · Knives & Kitchenware",
+        items: [
+          { name: "Kappabashi Street", meta: "1km of specialist knife shops · cash preferred · Iko will guide", q: "Kappabashi Street Tokyo" },
+          { name: "Tsubaya Knife Shop", meta: "Refined family-run blade shop · English support", q: "Tsubaya Knives Kappabashi" },
+          { name: "Kama-Asa", meta: "Sleek, well-edited knife and cookware boutique", q: "Kama-Asa Kappabashi" }
+        ]
+      },
+      {
+        title: "Shopping · Menswear & Shoes",
+        items: [
+          { name: "Yohei Fukuda", meta: "World-class bespoke shoemaker · by appointment", q: "Yohei Fukuda shoes Tokyo" },
+          { name: "Marquess", meta: "Refined bespoke shoes · Aoyama", q: "Marquess shoes Tokyo Aoyama" },
+          { name: "Jedia", meta: "Sharp, low-key menswear", q: "Jedia menswear Tokyo" },
+          { name: "Hermès Ginza", meta: "The flagship · Renzo Piano building", q: "Hermès Ginza" }
+        ]
+      },
+      {
+        title: "Shopping · Home Goods & Ceramics",
+        items: [
+          { name: "Yanaka Matsunoya", meta: "Quiet, century-old housewares · Yanaka", q: "Yanaka Matsunoya Tokyo" },
+          { name: "Sumiya Bunjirō Toen", meta: "Refined ceramics specialist · Aoyama", q: "Sumiya Bunjiro Toen Aoyama" },
+          { name: "Sou·Sou", meta: "Modern Japanese textiles · Aoyama", q: "Sou Sou Aoyama Tokyo" }
+        ]
+      },
+      {
+        title: "Shopping · Books & Eyewear",
+        items: [
+          { name: "Daikanyama T-Site", meta: "Tsutaya's flagship bookstore · architecture worth the trip", q: "Daikanyama T-Site" },
+          { name: "Aoyama Book Center", meta: "Curated art and design · Omotesando", q: "Aoyama Book Center Omotesando" },
+          { name: "Solakzade", meta: "Cult vintage eyewear · Jingumae", q: "Solakzade vintage eyewear Tokyo" }
+        ]
+      },
+      {
+        title: "Coffee · Iko's list",
+        items: [
+          { name: "Koffee Mameya Kakeru", meta: "Reservation-only tasting · the most refined coffee experience in Tokyo", q: "Koffee Mameya Kakeru Kiyosumi" },
+          { name: "Koffee Mameya", meta: "The original · Omotesando · quiet, precise", q: "Koffee Mameya Omotesando" },
+          { name: "Glitch Coffee · Kanda", meta: "Single-origin light roast specialists", q: "Glitch Coffee Kanda" },
+          { name: "Onibus Coffee · Nakameguro", meta: "Beautiful canal-side café · pair with a Meguro walk", q: "Onibus Coffee Nakameguro" },
+          { name: "% Arabica Daikanyama", meta: "Minimal, photogenic · strong espresso", q: "Arabica Daikanyama" },
+          { name: "Bear Pond Espresso", meta: "Shimokitazawa institution · long pulled shots", q: "Bear Pond Espresso Shimokitazawa" }
+        ]
+      }
+    ]
+  },
+  kyoto: {
+    title: "Kyoto",
+    subtitle: "Old capital · craft, ceremony, slowness",
+    groups: [
+      {
+        title: "Shopping · Tea & Ceramics",
+        items: [
+          { name: "Ippodo Tea", meta: "Three-century-old tea merchant · Teramachi", q: "Ippodo Tea Kyoto" },
+          { name: "Kaikado", meta: "Handmade tea caddies · sixth-generation family workshop", q: "Kaikado Kyoto" },
+          { name: "Asahi-yaki Shop", meta: "400-year-old Uji ceramic family · short trip from Kyoto", q: "Asahi-yaki Uji" }
+        ]
+      },
+      {
+        title: "Shopping · Antiques & Textiles",
+        items: [
+          { name: "Shinmonzen Street", meta: "Antique dealers' lane · Gion", q: "Shinmonzen Street Kyoto antiques" },
+          { name: "Nishijin Textile Centre", meta: "Centuries of Kyoto weaving · live demonstrations", q: "Nishijin Textile Center Kyoto" },
+          { name: "Sou·Sou Kyoto", meta: "Modern textiles flagship · Shijo", q: "Sou Sou Kyoto Shijo" }
+        ]
+      },
+      {
+        title: "Shopping · Market & Streets",
+        items: [
+          { name: "Nishiki Market", meta: "Five blocks of pickles, knives, tofu, wagyu skewers · 10 min from hotel", q: "Nishiki Market Kyoto" },
+          { name: "Teramachi-dori", meta: "Long covered shopping arcade · everything from books to lacquerware", q: "Teramachi Street Kyoto" }
+        ]
+      },
+      {
+        title: "Coffee · Kyoto",
+        items: [
+          { name: "% Arabica · Higashiyama", meta: "The signature shop · views of Yasaka Pagoda", q: "Arabica Higashiyama Kyoto" },
+          { name: "Weekenders Coffee", meta: "Hidden courtyard cafe · refined pour-over", q: "Weekenders Coffee Tominokoji" },
+          { name: "Kurasu Kyoto", meta: "Single-origin specialty roaster", q: "Kurasu Coffee Kyoto" },
+          { name: "Walden Woods Kyoto", meta: "Architectural white-on-white café · cult favourite", q: "Walden Woods Kyoto" },
+          { name: "Vermillion Espresso Bar", meta: "Australian-style espresso near Fushimi Inari", q: "Vermillion Espresso Bar Kyoto" }
+        ]
+      }
+    ]
+  }
+};
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  WISHLIST — From client brief
+   ════════════════════════════════════════════════════════════ */
+
+const WISHLIST = [
+  { group: "High-End Sushi", items: ["Sushi Sugita", "Sushi Arai", "Sushi Sawada", "Sushi Shunji", "Higashi Azabu Amamoto"] },
+  { group: "Ramen", items: ["Ginza Kagari"] },
+  { group: "Tempura", items: ["Tempura Motoyoshi"] },
+  { group: "Beef", items: ["Makoto"] },
+  { group: "Pizza", items: ["Seirinkan", "400°C Pizza Tokyo"] },
+  { group: "Cocktail Bars", items: ["Bar Centifolia", "Ben Fiddich", "Land Bar", "Bar Orchard"] },
+  { group: "Jazz Kissa", items: ["Bar Martha"] },
+  { group: "Kids · Activities", items: ["Pokémon activities", "Character cafés", "Nintendo activities", "Parks & playgrounds", "Interactive activities"] },
+  { group: "Kyoto · Activities", items: ["Iwatayama Monkey Park", "River boat ride", "Samurai experience", "Fushimi Inari Taisha", "Arashiyama Bamboo Grove"] },
+  { group: "Men's Shoes", items: ["Yohei Fukuda", "Marquess"] },
+  { group: "Menswear", items: ["Jedia"] },
+  { group: "Home Goods", items: ["Ceramics", "Glassware"] },
+  { group: "Fashion", items: ["Kimono"] },
+  { group: "Beauty", items: ["High-end skin care"] },
+  { group: "Books", items: ["Bookstore · Omotesando area"] },
+  { group: "Eyewear", items: ["Vintage eyeglass store"] },
+  { group: "Luxury", items: ["Hermès Store"] }
+];
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  DIET — Per-traveller dietary restrictions
+   ════════════════════════════════════════════════════════════ */
+
+const DIET = [
+  {
+    name: "Anthony Schiller",
+    tag: "Severe Allergy",
+    tagClass: "severe",
+    severeClass: true,
+    sections: [
+      { title: "Severe Allergy · Must Avoid Completely", class: "severe", chipClass: "severe",
+        items: ["Bee pollen", "Honey"] }
+    ]
+  },
+  {
+    name: "Ridenour Schiller",
+    tag: "Preference",
+    tagClass: "",
+    sections: [
+      { title: "Personal Dislike", class: "dislike", chipClass: "",
+        items: ["Shellfish · Clams · Oysters"] }
+    ]
+  },
+  {
+    name: "Yeva Tatham",
+    tag: "Preference",
+    tagClass: "",
+    sections: [
+      { title: "Personal Dislike", class: "dislike", chipClass: "",
+        items: ["Organ meats"] }
+    ]
+  },
+  {
+    name: "Max Tatham",
+    tag: "4-year-old",
+    tagClass: "child",
+    sections: [
+      { title: "Avoid", class: "avoid", chipClass: "avoid",
+        items: ["Organ meats", "Natto", "High-mercury fish"] },
+      { title: "Personal Dislike", class: "dislike", chipClass: "",
+        items: ["Shrimp / Prawns", "Squid", "Octopus", "Scallops", "Shellfish / Clams / Oysters", "Sea eel (Anago)", "Raw fish / Sushi", "Duck", "Soft / mushy textures"] }
+    ]
+  }
+];
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  JAPANESE TRANSLATIONS — Chef-facing card
+   ════════════════════════════════════════════════════════════ */
+
+const DIET_JP = [
+  {
+    name: "Anthony Schiller · アンソニー・シラー様",
+    nameEn: "Adult guest",
+    severe: true,
+    sections: [
+      {
+        label: "重度のアレルギー · Severe Allergy",
+        class: "severe",
+        text: "<strong>蜂花粉（はちかふん）と蜂蜜（はちみつ）に重度のアレルギーがございます。</strong><br>蜂蜜・蜂花粉・ロイヤルゼリーを含む全ての食材・調味料・ドレッシング・デザートをご使用にならないようお願い申し上げます。誤って混入した場合、命に関わる可能性がございます。"
+      }
+    ]
+  },
+  {
+    name: "Max Tatham · マックス様",
+    nameEn: "4-year-old child",
+    severe: false,
+    sections: [
+      {
+        label: "お控えいただきたい食材 · Please avoid",
+        class: "avoid",
+        text: "内臓・モツ類<br>納豆<br>水銀の多い魚（マグロの大きいもの等）"
+      },
+      {
+        label: "お好みではない食材 · Personal dislikes",
+        class: "",
+        text: "エビ（海老） · イカ · タコ · 帆立 · 貝類 · 牡蠣 · 穴子 · 生魚・お寿司 · 鴨肉 · 柔らかすぎる食感"
+      }
+    ]
+  },
+  {
+    name: "Yeva Tatham · イーヴァ様",
+    nameEn: "Adult guest",
+    severe: false,
+    sections: [
+      {
+        label: "お好みではない食材 · Personal dislike",
+        class: "",
+        text: "内臓・モツ類"
+      }
+    ]
+  },
+  {
+    name: "Ridenour Schiller · リデナー様",
+    nameEn: "Adult guest",
+    severe: false,
+    sections: [
+      {
+        label: "お好みではない食材 · Personal dislike",
+        class: "",
+        text: "貝類・あさり・牡蠣"
+      }
+    ]
+  }
+];
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  CONFIGURATION — API keys & customisation
+   ────────────────────────────────────────────────────────────
+   WEATHER · Open-Meteo is used (free, no API key required).
+   CURRENCY · Static rate hard-coded below. To switch to live
+   rates, point CURRENCY_API_URL at any free FX provider.
+   ════════════════════════════════════════════════════════════ */
+
+const CONFIG = {
+  // Weather coordinates per city (Open-Meteo · no key needed)
+  weatherCoords: {
+    Tokyo: { lat: 35.6762, lng: 139.6503 },
+    Kyoto: { lat: 35.0116, lng: 135.7681 }
+  },
+  // Currency · rate from the project canvas (USD→JPY)
+  // To use live rates: set CURRENCY_API_URL and uncomment fetch logic below
+  USD_TO_JPY: 152.65,
+  CURRENCY_API_URL: "" // e.g. "https://api.exchangerate.host/latest?base=USD&symbols=JPY"
+};
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  UTILITIES — Date / string helpers
+   ════════════════════════════════════════════════════════════ */
+
+const $  = (sel, root = document) => root.querySelector(sel);
+const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+function parseISO(d) { const [y,m,dd] = d.split('-').map(Number); return new Date(y, m-1, dd); }
+function tokyoNow() {
+  // Convert any browser time to Tokyo wall-clock time using locale formatting
+  const fmt = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Tokyo',
+    year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', second: '2-digit',
+    hour12: false
+  });
+  const parts = Object.fromEntries(fmt.formatToParts(new Date()).map(p => [p.type, p.value]));
+  return {
+    iso: `${parts.year}-${parts.month}-${parts.day}`,
+    time: `${parts.hour}:${parts.minute}`,
+    full: `${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}:${parts.second}`
+  };
+}
+function formatDateLong(iso) {
+  const d = parseISO(iso);
+  return d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+}
+function dayNumber(iso) {
+  const trip0 = parseISO(TRIP.startDate);
+  const dt = parseISO(iso);
+  return Math.round((dt - trip0) / 86400000) + 1;
+}
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  STICKY HEADER — Live JST clock + trip day badge
+   ════════════════════════════════════════════════════════════ */
+
+function updateClockAndBadge() {
+  const now = tokyoNow();
+  $('#live-clock').textContent = `${now.time} JST`;
+
+  const todayISO = now.iso;
+  const start = TRIP.startDate, end = TRIP.endDate;
+  const badge = $('#trip-day-badge');
+
+  if (todayISO < start) {
+    const daysUntil = Math.round((parseISO(start) - parseISO(todayISO)) / 86400000);
+    badge.textContent = daysUntil === 1 ? 'Starts tomorrow' : `T-${daysUntil}`;
+    badge.className = 'upcoming';
+  } else if (todayISO > end) {
+    badge.textContent = 'Trip complete';
+    badge.className = 'ended';
+  } else {
+    const dayNum = dayNumber(todayISO);
+    const totalDays = TRIP.days.length;
+    badge.textContent = `Day ${dayNum} / ${totalDays}`;
+    badge.className = '';
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  RENDER · ITINERARY
+   ════════════════════════════════════════════════════════════ */
+
+function renderDays() {
+  const container = $('#days-container');
+  const todayISO = tokyoNow().iso;
+  container.innerHTML = TRIP.days.map((day, i) => {
+    const dayNum = i + 1;
+    const isToday = day.date === todayISO;
+    const cityClass = day.city.toLowerCase();
+    const hotel = day.hotel ? TRIP.hotels[day.hotel] : null;
+
+    return `
+      <article class="day-card ${isToday ? 'is-today expanded' : ''}" data-day-iso="${day.date}">
+        <header class="day-header" onclick="toggleDay(this)">
+          <div class="day-header-left">
+            <div class="day-num">Day<strong>${dayNum}</strong></div>
+            <div class="day-meta">
+              <div class="day-date">${formatDateLong(day.date)}${isToday ? '<span class="is-today-badge">Today</span>' : ''}</div>
+              <div class="day-city ${cityClass}">${day.city}</div>
+            </div>
+          </div>
+          <div class="day-toggle" aria-hidden="true">▾</div>
+        </header>
+        <div class="day-body">
+          <div class="day-content">
+            <div class="weather-strip" data-weather-city="${day.city}" data-weather-date="${day.date}">
+              <span class="weather-loading">Loading forecast…</span>
+            </div>
+            ${hotel ? `
+              <div class="hotel-block">
+                <div class="hotel-label">Overnight</div>
+                <div class="hotel-name">${hotel.name}</div>
+                ${hotel.note ? `<div class="hotel-note">${hotel.note}</div>` : ''}
+              </div>
+            ` : ''}
+            ${day.notes ? `<div class="stop-note">${day.notes}</div>` : ''}
+            ${day.stops.map(renderStop).join('')}
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
+function renderStop(stop) {
+  const mapsUrl   = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(stop.mapsQuery || stop.locationName || stop.title)}`;
+  const navUrl    = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(stop.mapsQuery || stop.locationName || stop.title)}`;
+  const addrEnc   = encodeURIComponent(stop.address || stop.locationName || '');
+  const statusKey = (stop.status || '').toLowerCase().replace(/[^a-z]/g, '-');
+  const statusClass = statusKey ? `status-${statusKey}` : '';
+
+  return `
+    <div class="stop">
+      <div class="stop-head">
+        <span class="stop-time">${stop.time || ''}</span>
+        ${stop.type ? `<span class="stop-type">${stop.type}</span>` : ''}
+      </div>
+      <div class="stop-title">${stop.title}</div>
+      ${stop.locationName && stop.locationName !== stop.title ? `<div class="stop-subtitle">${stop.locationName}</div>` : ''}
+      ${stop.style ? `<span class="stop-style">${stop.style}</span>` : ''}
+      ${stop.status ? `<span class="stop-status ${statusClass}">${stop.status}</span>` : ''}
+      ${stop.desc ? `<div class="stop-desc">${stop.desc}</div>` : ''}
+      ${stop.note ? `<div class="stop-note">${stop.note}</div>` : ''}
+      <div class="stop-actions">
+        <a href="${mapsUrl}" target="_blank" rel="noopener" class="btn"><span class="btn-icon">⌖</span>Open in Maps</a>
+        <a href="${navUrl}" target="_blank" rel="noopener" class="btn"><span class="btn-icon">⇢</span>Navigate</a>
+        ${stop.address ? `<button class="btn" onclick="copyText('${(stop.address || '').replace(/'/g, "\\'")}')"><span class="btn-icon">⎘</span>Copy address</button>` : ''}
+      </div>
+    </div>
+  `;
+}
+
+function toggleDay(headerEl) {
+  const card = headerEl.closest('.day-card');
+  card.classList.toggle('expanded');
+}
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  RENDER · DISCOVER
+   ════════════════════════════════════════════════════════════ */
+
+function renderDiscover() {
+  const container = $('#discover-container');
+  container.innerHTML = ['tokyo', 'kyoto'].map(cityKey => {
+    const city = DISCOVER[cityKey];
+    return `
+      <div class="discover-section">
+        <div class="discover-city">${city.title}</div>
+        <div class="discover-city-meta">${city.subtitle}</div>
+        ${city.groups.map(group => `
+          <div class="discover-group">
+            <div class="discover-group-title">${group.title}</div>
+            ${group.items.map(item => {
+              const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.q)}`;
+              return `
+                <div class="discover-item">
+                  <div class="discover-item-info">
+                    <div class="discover-item-name">${item.name}</div>
+                    <div class="discover-item-meta">${item.meta}</div>
+                  </div>
+                  <a href="${mapsUrl}" target="_blank" rel="noopener" class="btn">⌖ Map</a>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }).join('');
+}
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  RENDER · WISHLIST
+   ════════════════════════════════════════════════════════════ */
+
+function renderWishlist() {
+  const container = $('#wishlist-container');
+  container.innerHTML = WISHLIST.map(group => `
+    <div class="wishlist-group">
+      <div class="wishlist-group-title">${group.group}</div>
+      ${group.items.map(item => {
+        const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item + ' Tokyo Japan')}`;
+        const isPlace = /[A-Z]/.test(item.charAt(0)) && !/^[A-Z][a-z]+ &/.test(item);
+        return `
+          <div class="wishlist-item">
+            <div class="wishlist-item-name">${item}</div>
+            ${isPlace ? `<a href="${mapsUrl}" target="_blank" rel="noopener" class="btn" style="padding:5px 9px;font-size:11px;">⌖ Map</a>` : ''}
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `).join('');
+}
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  RENDER · DIET
+   ════════════════════════════════════════════════════════════ */
+
+function renderDiet() {
+  const container = $('#diet-container');
+  container.innerHTML = DIET.map(person => `
+    <div class="diet-person-card ${person.severeClass ? 'severe' : ''}">
+      <div class="diet-person-head">
+        <div class="diet-person-name">${person.name}</div>
+        <span class="diet-person-tag ${person.tagClass}">${person.tag}</span>
+      </div>
+      ${person.sections.map(section => `
+        <div class="diet-section-title ${section.class}">${section.title}</div>
+        <div class="diet-chip-row">
+          ${section.items.map(item => `<span class="diet-chip ${section.chipClass}">${item}</span>`).join('')}
+        </div>
+      `).join('')}
+    </div>
+  `).join('');
+}
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  DIET MODAL — Japanese chef-facing card
+   ════════════════════════════════════════════════════════════ */
+
+function renderDietModal() {
+  const container = $('#modal-jp-content');
+  // sort severe-first so allergy line comes first
+  const sorted = [...DIET_JP].sort((a,b) => (b.severe?1:0) - (a.severe?1:0));
+  container.innerHTML = sorted.map(person => `
+    <div class="jp-card ${person.severe ? 'severe' : ''}">
+      <div class="jp-card-name">${person.name}</div>
+      <div class="jp-card-name-en">${person.nameEn}</div>
+      ${person.sections.map(section => `
+        <div class="jp-card-label ${section.class}">${section.label}</div>
+        <div class="${section.class === 'severe' ? 'jp-text' : 'jp-text-list'}">${section.text}</div>
+      `).join('')}
+    </div>
+  `).join('');
+}
+
+function openDietModal() {
+  $('#diet-modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeDietModal() {
+  $('#diet-modal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  WEATHER — Open-Meteo (no API key required)
+   ════════════════════════════════════════════════════════════ */
+
+const WEATHER_ICONS = {
+  0: '☀', 1: '⛅', 2: '⛅', 3: '☁',
+  45: '🌫', 48: '🌫',
+  51: '🌦', 53: '🌦', 55: '🌦', 56: '🌦', 57: '🌦',
+  61: '🌧', 63: '🌧', 65: '🌧', 66: '🌧', 67: '🌧',
+  71: '🌨', 73: '🌨', 75: '🌨', 77: '🌨',
+  80: '🌦', 81: '🌧', 82: '⛈',
+  85: '🌨', 86: '🌨',
+  95: '⛈', 96: '⛈', 99: '⛈'
+};
+const WEATHER_DESC = {
+  0: 'Clear', 1: 'Mainly clear', 2: 'Partly cloudy', 3: 'Overcast',
+  45: 'Fog', 48: 'Fog',
+  51: 'Light drizzle', 53: 'Drizzle', 55: 'Heavy drizzle', 56: 'Freezing drizzle', 57: 'Freezing drizzle',
+  61: 'Light rain', 63: 'Rain', 65: 'Heavy rain', 66: 'Freezing rain', 67: 'Freezing rain',
+  71: 'Light snow', 73: 'Snow', 75: 'Heavy snow', 77: 'Snow grains',
+  80: 'Showers', 81: 'Showers', 82: 'Violent showers',
+  85: 'Snow showers', 86: 'Heavy snow showers',
+  95: 'Thunderstorm', 96: 'Thunderstorm w/ hail', 99: 'Thunderstorm w/ hail'
+};
+
+const weatherCache = { Tokyo: null, Kyoto: null };
+
+async function fetchWeatherForCity(city) {
+  if (weatherCache[city]) return weatherCache[city];
+  const coords = CONFIG.weatherCoords[city] || CONFIG.weatherCoords.Tokyo;
+  const url = `https://api.open-meteo.com/v1/forecast` +
+              `?latitude=${coords.lat}&longitude=${coords.lng}` +
+              `&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max` +
+              `&timezone=Asia%2FTokyo&forecast_days=16`;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('forecast failed');
+    const data = await res.json();
+    weatherCache[city] = data.daily;
+    return data.daily;
+  } catch (err) {
+    return null;
+  }
+}
+
+async function paintWeather() {
+  const strips = $$('.weather-strip');
+  // unique city/date combos
+  const cities = [...new Set(strips.map(s => s.dataset.weatherCity))];
+  const cityData = {};
+  await Promise.all(cities.map(async c => { cityData[c] = await fetchWeatherForCity(c); }));
+
+  strips.forEach(strip => {
+    const city = strip.dataset.weatherCity;
+    const date = strip.dataset.weatherDate;
+    const daily = cityData[city];
+    if (!daily) {
+      strip.innerHTML = `<span class="weather-loading">Weather forecast available closer to date</span>`;
+      return;
+    }
+    const idx = daily.time.indexOf(date);
+    if (idx === -1) {
+      // Out of forecast range — show elegant placeholder
+      strip.innerHTML = `<span class="weather-icon">◌</span><span class="weather-desc">Forecast available closer to date</span>`;
+      return;
+    }
+    const code = daily.weathercode[idx];
+    const tmax = Math.round(daily.temperature_2m_max[idx]);
+    const tmin = Math.round(daily.temperature_2m_min[idx]);
+    const rain = daily.precipitation_probability_max[idx];
+    const icon = WEATHER_ICONS[code] || '◌';
+    const desc = WEATHER_DESC[code] || '—';
+    strip.innerHTML = `
+      <span class="weather-icon">${icon}</span>
+      <span>
+        <div class="weather-temps">${tmax}° · ${tmin}°C</div>
+        <div class="weather-desc">${desc}</div>
+      </span>
+      <span class="weather-rain">${rain ?? 0}% rain</span>
+    `;
+  });
+}
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  CURRENCY CONVERTER
+   ════════════════════════════════════════════════════════════ */
+
+function setupCurrency() {
+  const rate = CONFIG.USD_TO_JPY;
+  $('#rate-display').textContent = `1 USD ≈ ¥${rate.toFixed(2)}`;
+  const jpy = $('#jpy-input');
+  const usd = $('#usd-input');
+  jpy.addEventListener('input', () => {
+    const v = parseFloat(jpy.value);
+    usd.value = isNaN(v) ? '' : (v / rate).toFixed(2);
+  });
+  usd.addEventListener('input', () => {
+    const v = parseFloat(usd.value);
+    jpy.value = isNaN(v) ? '' : Math.round(v * rate);
+  });
+  // default seed
+  jpy.value = 10000;
+  usd.value = (10000 / rate).toFixed(2);
+
+  // OPTIONAL · live rate fetch
+  // if (CONFIG.CURRENCY_API_URL) {
+  //   fetch(CONFIG.CURRENCY_API_URL)
+  //     .then(r => r.json())
+  //     .then(d => {
+  //       const newRate = d?.rates?.JPY;
+  //       if (newRate) {
+  //         CONFIG.USD_TO_JPY = newRate;
+  //         $('#rate-display').textContent = `1 USD ≈ ¥${newRate.toFixed(2)} (live)`;
+  //       }
+  //     }).catch(() => {});
+  // }
+}
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  TABS
+   ════════════════════════════════════════════════════════════ */
+
+function setupTabs() {
+  $$('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      $$('.tab-btn').forEach(b => b.classList.toggle('active', b === btn));
+      $$('.tab-panel').forEach(p => p.classList.toggle('active', p.id === `tab-${target}`));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+}
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  COPY TO CLIPBOARD + TOAST
+   ════════════════════════════════════════════════════════════ */
+
+function copyText(text) {
+  if (!text) return;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(showToast).catch(() => fallbackCopy(text));
+  } else {
+    fallbackCopy(text);
+  }
+}
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.left = '-1000px';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); showToast(); } catch (e) {}
+  document.body.removeChild(ta);
+}
+function showToast() {
+  const t = $('#copy-toast');
+  t.classList.add('show');
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => t.classList.remove('show'), 1800);
+}
+
+/* ════════════════════════════════════════════════════════════
+   ▌▌  INIT
+   ════════════════════════════════════════════════════════════ */
+
+function init() {
+  renderDays();
+  renderDiscover();
+  renderWishlist();
+  renderDiet();
+  renderDietModal();
+  setupCurrency();
+  setupTabs();
+  updateClockAndBadge();
+  setInterval(updateClockAndBadge, 30000);
+  paintWeather();
+
+  // Auto-scroll to today's expanded card on load
+  setTimeout(() => {
+    const todayCard = $('.day-card.is-today');
+    if (todayCard) {
+      // only scroll within the itinerary tab if active
+      const inItin = $('#tab-itinerary').classList.contains('active');
+      if (inItin) todayCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, 400);
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+
+</body>
+</html>
 
