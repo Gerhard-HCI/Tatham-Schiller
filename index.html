@@ -340,7 +340,7 @@
   </div>
   <div class="hdr-names">
     <div class="hdr-name">Casey Tatham &middot; Anthony Schiller</div>
-    <div class="hdr-name2">Yeva Tatham &middot; Max Schiller &middot; Ridenour Schiller &middot; and Guests</div>
+    <div class="hdr-name2">Yeva Tatham &middot; Max Schiller &middot; Ridenour Schiller</div>
   </div>
   <nav class="tab-nav">
     <button class="tab-btn active" data-tab="itinerary">Itinerary</button>
@@ -348,7 +348,7 @@
     <button class="tab-btn" data-tab="wishlist">Wish List</button>
     <button class="tab-btn" data-tab="diet">Diet</button>
     <button class="tab-btn" data-tab="utilities">Utilities</button>
-    <button class="tab-btn" data-tab="emergency">Emergency</button>
+    <button class="tab-btn" data-tab="emergency">Contacts &amp; Emergency</button>
   </nav>
 </header>
 
@@ -1251,11 +1251,12 @@ function renderUtilities(){
 }
 
 /* ═══════════════════════════════════════════════════════
-   RENDER · EMERGENCY
+   RENDER · CONTACTS & EMERGENCY (merged)
+   Hosts at top, then emergency services below.
 ═══════════════════════════════════════════════════════ */
 function renderEmergency(){
   document.getElementById('tab-emergency').innerHTML=''
-    +'<div class="emergency-banner"><h2>Emergency &amp; Contacts</h2><p>Tokyo · Kyoto · May–June 2026 · Iko & Kevin available 24/7</p></div>'
+    +'<div class="emergency-banner"><h2>Contacts &amp; Emergency</h2><p>Your trip team · Japan emergency services · medical · embassy</p></div>'
     +'<div class="section-label">Meet Your Hosts</div>'
     +'<div class="util-card host-card">'
     +  '<div class="host-bio">'
@@ -1267,17 +1268,18 @@ function renderEmergency(){
     +    '<p class="host-bio-text">Based in Osaka with his wife and young son. In Japan since 2009 — first drawn here by Okinawan martial arts at seventeen, later studying Japanese formally in Kyoto. A decade spent balancing seasonal work between Japan and Canada as a forest firefighter Incident Commander; for the past two and a half years a full-time professional tour guide across the Kansai region, with a focus on the quiet details often missed between temples, alleyways and meals. Trained in shinobue (traditional bamboo flute) and kyūdō (Japanese archery), with a lifelong martial arts practice; this year leading a team in the Gion Matsuri, the 1100-year-old Kyoto festival. English, Japanese, and conversational French. Joining the family for the 4-hour private Kyoto tour on Thu 28 May.</p>'
     +  '</div>'
     +'</div>'
+    +'<div class="section-label">Happy Camper · Your Hosts</div>'
+    +'<div class="contact-card">'
+    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">🌿</div><div><div class="contact-label">Iko · Ikuko Tamura</div><div class="contact-sub">Tour guide · Mon 25 May (Tsukiji) · WhatsApp / LINE</div></div></div><a href="tel:+818034270884" class="call-btn cn">📞 Call</a></div>'
+    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">⛩</div><div><div class="contact-label">Kevin Mueller</div><div class="contact-sub">Kyoto tour guide · Thu 28 May · WhatsApp</div></div></div><a href="tel:+817044090848" class="call-btn cn">📞 Call</a></div>'
+    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">🍱</div><div><div class="contact-label">Tomoko Morikawa</div><div class="contact-sub">Programme Director · WhatsApp</div></div></div><a href="tel:+819061589006" class="call-btn cn">📞 Call</a></div>'
+    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">🏯</div><div><div class="contact-label">Gerhard Huber</div><div class="contact-sub">WhatsApp</div></div></div><a href="tel:+818069892107" class="call-btn cn">📞 Call</a></div>'
+    +'</div>'
     +'<div class="section-label">Emergency Numbers</div>'
     +'<div class="contact-card">'
     +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-r">🚨</div><div><div class="contact-label">Police</div><div class="contact-sub">All emergency police calls</div></div></div><a href="tel:110" class="call-btn cr">📞 110</a></div>'
     +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-r">🚑</div><div><div class="contact-label">Ambulance &amp; Fire</div><div class="contact-sub">Medical emergencies</div></div></div><a href="tel:119" class="call-btn cr">📞 119</a></div>'
     +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-r">⚓</div><div><div class="contact-label">Coast Guard</div><div class="contact-sub">At sea</div></div></div><a href="tel:118" class="call-btn cr">📞 118</a></div>'
-    +'</div>'
-    +'<div class="section-label">Happy Camper · Your Hosts</div>'
-    +'<div class="contact-card">'
-    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">🌿</div><div><div class="contact-label">Iko · Ikuko Tamura</div><div class="contact-sub">Tour guide · Mon 25 May (Tsukiji) · WhatsApp / LINE</div></div></div><a href="tel:+818034270884" class="call-btn cn">📞 Call</a></div>'
-    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">⛩</div><div><div class="contact-label">Kevin Mueller</div><div class="contact-sub">Kyoto tour guide · Thu 28 May · WhatsApp</div></div></div><a href="tel:+817044090848" class="call-btn cn">📞 Call</a></div>'
-    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">🍱</div><div><div class="contact-label">Gerhard — Happy Camper</div><div class="contact-sub">Programme director · WhatsApp</div></div></div><a href="tel:+818069892107" class="call-btn cn">📞 Call</a></div>'
     +'</div>'
     +'<div class="section-label">Medical — English-speaking</div>'
     +'<div class="contact-card">'
