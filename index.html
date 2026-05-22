@@ -447,13 +447,19 @@ var TRIP = {
       date:'2026-05-25', dayNum:3, weekday:'Monday, 25 May',
       city:'Tokyo', cityClass:'', hotel:'Four Seasons Hotel Tokyo at Otemachi', hq:'Four Seasons Hotel Tokyo at Otemachi',
       hosted:false,
-      notes:'Free day · Yakiniku Nakahara PDR confirmed for dinner at 18:00.',
+      notes:'Lunch confirmed at 400°C Pizza · Yakiniku Nakahara PDR confirmed for dinner at 18:00. Morning and afternoon otherwise open.',
       stops:[
-        { time:'Open', type:'activity', badge:'Suggestion', badgeType:'suggestion',
-          title:'Free Day · Tokyo',
-          sub:'Open day — to be shaped',
+        { time:'Morning', type:'activity', badge:'Suggestion', badgeType:'suggestion',
+          title:'Free Morning · Tokyo',
+          sub:'Open — to be shaped',
           loc:'Tokyo', addr:'Tokyo', q:'Tokyo',
-          notes:'A flexible day. Strong options near the Four Seasons Otemachi: the Imperial Palace East Gardens on foot from the hotel, a quiet morning at the Nezu Museum, or one of the Pokémon / Ghibli experiences for Max.', alert:null },
+          notes:'A flexible morning before the pizza lunch. Strong options near the Four Seasons Otemachi: the Imperial Palace East Gardens on foot from the hotel, a quiet visit to the Nezu Museum, or one of the Pokémon / Ghibli experiences for Max.', alert:null },
+        { time:'12:30', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
+          title:'400°C Pizza',
+          sub:'Lunch · Confirmed · 5 pax · 12:30',
+          loc:'400°C Pizza Tokyo', addr:'Tokyo', q:'400C Pizza Tokyo',
+          notes:'A confirmed lunch for the full party of 5 at 400°C — Tokyo\'s celebrated Neapolitan-style pizza counter, on the family\'s own wish list. Wood-fired at the eponymous temperature, the dough exceptional. A relaxed midday counter that works beautifully with the children.',
+          dietary:'<strong>Severe allergy:</strong> Anthony — bee pollen, honey. The kitchen has been flagged in advance.', alert:null },
         { time:'18:00', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
           title:'Yakiniku Nakahara · PDR',
           sub:'Dinner · Confirmed · 5 pax · Private Dining Room',
@@ -659,6 +665,7 @@ var TRIP = {
 var WL_CONFIRMED = [
   { name:'Sushi Nakano',   style:'Sushi · Sun 24 May · Dinner 19:00 · 3 pax',         q:'Sushi Nakano Tokyo' },
   { name:'Yakiniku Nakahara · PDR', style:'Yakiniku · Mon 25 May · Dinner 18:00 · 5 pax', q:'Yakiniku Nakahara Tokyo' },
+  { name:'400°C Pizza',  style:'Pizza · Mon 25 May · Lunch 12:30 · 5 pax',          q:'400C Pizza Tokyo' },
   { name:'Sushi Mitsui',   style:'Sushi · Tue 26 May · Dinner 20:30 · 3 pax',         q:'Sushi Mitsui Tokyo' },
   { name:'Restaurant Muni',style:'French · Wed 27 May · Dinner 19:00 · 3 pax · Kyoto', q:'Restaurant Muni Arashiyama Kyoto' },
   { name:'Ukai-tei Ginza · PDR', style:'Teppanyaki · Fri 29 May · Dinner 17:30 · 3 pax',q:'Ukai-tei Ginza Tokyo' },
@@ -682,7 +689,6 @@ var WL_LONGTERM = [
   { name:'Tempura Motoyoshi', style:'Tempura · From client brief' },
   { name:'Makoto',         style:'Beef · From client brief' },
   { name:'Seirinkan',      style:'Pizza · From client brief' },
-  { name:'400°C Pizza Tokyo',style:'Pizza · From client brief' },
   { name:'Bar Centifolia', style:'Cocktail · From client brief' },
   { name:'Ben Fiddich',    style:'Cocktail · From client brief' },
   { name:'Land Bar',       style:'Cocktail · From client brief' },
@@ -967,8 +973,9 @@ function renderItinerary(){
     +'<div class="banner-dates">23 May – 2 June 2026 · 5 Guests · 10 Nights · Tokyo + Kyoto</div>'
     +'<div class="banner-chips">'
     +'<span class="banner-chip confirmed">🍣 Sushi Nakano · Confirmed</span>'
-    +'<span class="banner-chip confirmed">🍣 Sushi Mitsui · Confirmed</span>'
+    +'<span class="banner-chip confirmed">🍕 400°C Pizza · Confirmed</span>'
     +'<span class="banner-chip confirmed">🥩 Nakahara PDR · Confirmed</span>'
+    +'<span class="banner-chip confirmed">🍣 Sushi Mitsui · Confirmed</span>'
     +'<span class="banner-chip confirmed">🇫🇷 Muni · Confirmed</span>'
     +'<span class="banner-chip confirmed">🥢 Ukai-tei PDR · Confirmed</span>'
     +'<span class="banner-chip confirmed">🗻 Kyoto Guide · Confirmed</span>'
