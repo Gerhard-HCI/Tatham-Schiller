@@ -447,19 +447,13 @@ var TRIP = {
       date:'2026-05-25', dayNum:3, weekday:'Monday, 25 May',
       city:'Tokyo', cityClass:'', hotel:'Janu Tokyo', hq:'Janu Tokyo Azabudai Hills',
       hosted:false,
-      notes:'Lunch confirmed at 400°C Pizza · Yakiniku Nakahara PDR confirmed for dinner at 18:00. Morning and afternoon otherwise open.',
+      notes:'Free day · Yakiniku Nakahara PDR confirmed for dinner at 18:00.',
       stops:[
-        { time:'Morning', type:'activity', badge:'Suggestion', badgeType:'suggestion',
-          title:'Free Morning · Tokyo',
-          sub:'Open — to be shaped',
+        { time:'Open', type:'activity', badge:'Suggestion', badgeType:'suggestion',
+          title:'Free Day · Tokyo',
+          sub:'Open day — to be shaped',
           loc:'Tokyo', addr:'Tokyo', q:'Tokyo',
-          notes:'A flexible morning before the pizza lunch. Strong options from Janu Tokyo: the Mori Art Museum upstairs at Azabudai Hills, teamLab Borderless five minutes away, or one of the Pokémon / Ghibli experiences for Max.', alert:null },
-        { time:'12:30', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
-          title:'400°C Pizza',
-          sub:'Lunch · Confirmed · 5 pax · 12:30',
-          loc:'400°C Pizza Tokyo', addr:'Tokyo', q:'400C Pizza Tokyo',
-          notes:'A confirmed lunch for the full party of 5 at 400°C — Tokyo\'s celebrated Neapolitan-style pizza counter, on the family\'s own wish list. Wood-fired at the eponymous temperature, the dough exceptional. A relaxed midday counter that works beautifully with the children.',
-          dietary:'<strong>Severe allergy:</strong> Anthony — bee pollen, honey. The kitchen has been flagged in advance.', alert:null },
+          notes:'A flexible day. Strong options from Janu Tokyo: the Mori Art Museum upstairs at Azabudai Hills, teamLab Borderless five minutes away, or one of the Pokémon / Ghibli experiences for Max.', alert:null },
         { time:'18:00', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
           title:'Yakiniku Nakahara · PDR',
           sub:'Dinner · Confirmed · 5 pax · Private Dining Room',
@@ -470,24 +464,19 @@ var TRIP = {
       ]
     },
 
-    /* DAY 4 · Tue 26 May · Tsukiji with Iko + Mitsui */
+    /* DAY 4 · Tue 26 May · Kawaii Monster Land + Mitsui */
     {
       date:'2026-05-26', dayNum:4, weekday:'Tuesday, 26 May',
       city:'Tokyo', cityClass:'', hotel:'Janu Tokyo', hq:'Janu Tokyo Azabudai Hills',
-      hosted:true,
-      notes:'Hosted — Iko in the morning. Tsukiji guided tour and lunch; luggage forwarding in the afternoon; Sushi Mitsui confirmed for dinner at 20:30.',
+      hosted:false,
+      notes:'Kawaii Monster Land confirmed for 10:00 in Harajuku · luggage forwarding in the afternoon · Sushi Mitsui confirmed for dinner at 20:30.',
       stops:[
-        { time:'Morning', type:'activity', badge:'Confirmed', badgeType:'confirmed',
-          title:'Tokyo Guided Tour · Tsukiji Fish Market',
-          sub:'Guided morning with Iko',
-          loc:'Tsukiji Outer Market', addr:'4 Chome Tsukiji, Chuo City, Tokyo', q:'Tsukiji Outer Market Tokyo',
-          notes:'A relaxed guided morning with Iko around the historic Tsukiji outer market — grilled tamago, tuna stalls, dashi shops, ceramics and the legendary knife dealers. The atmosphere is unhurried and at street level, with countless small tastings along the lanes. A favourite for families.',
-          alert:'Best between 09:00 and 11:00 — Iko will set the exact start time' },
-        { time:'~12:30', type:'restaurant', badge:'Walk-in', badgeType:'walk-in',
-          title:'Tsukiji Lunch · Iko\'s pick',
-          sub:'Sushi / Donburi / Street food',
-          loc:'Tsukiji Outer Market', addr:'Tsukiji, Chuo City, Tokyo', q:'Tsukiji Outer Market food Tokyo',
-          notes:'Iko will choose a counter inside the market — uni rice bowls, sushi at Sushizanmai\'s flagship, grilled scallops, or the famed tuna-cheek skewers. Walk-in only in this area.', alert:null },
+        { time:'10:00', type:'activity', badge:'Confirmed', badgeType:'confirmed',
+          title:'Kawaii Monster Land · Harajuku',
+          sub:'Family experience · Confirmed · 10:00 · ~60 min',
+          loc:'Kawaii Monster Land Harajuku', addr:'Takeshita Street Square B1F, 1-16-4 Jingumae, Shibuya City, Tokyo', q:'https://maps.app.goo.gl/2sdL5DnfbDdPb3RH6',
+          notes:'A vivid 60-minute underground amusement experience beneath Takeshita Street, produced by Sebastian Masuda — the art director behind the original Kawaii Monster Café. Pastel monsters, live performances, interactive zones, photo sets and themed snacks. Perfect counter-programming for Max against the formal dinners later in the week, and quintessentially Harajuku.',
+          alert:'Strictly Instagram territory — pure fun. Allow 60 min inside.' },
         { time:'16:00', type:'transport', badge:'Logistics', badgeType:'logistics',
           title:'Luggage Forwarding · Ta-Q-Bin',
           sub:'Bell desk by 16:00 — bags to Kyoto',
@@ -665,11 +654,10 @@ var TRIP = {
 var WL_CONFIRMED = [
   { name:'Sushi Nakano',   style:'Sushi · Sun 24 May · Dinner 19:00 · 3 pax',         q:'Sushi Nakano Tokyo' },
   { name:'Yakiniku Nakahara · PDR', style:'Yakiniku · Mon 25 May · Dinner 18:00 · 5 pax', q:'Yakiniku Nakahara Tokyo' },
-  { name:'400°C Pizza',  style:'Pizza · Mon 25 May · Lunch 12:30 · 5 pax',          q:'400C Pizza Tokyo' },
   { name:'Sushi Mitsui',   style:'Sushi · Tue 26 May · Dinner 20:30 · 3 pax',         q:'Sushi Mitsui Tokyo' },
   { name:'Restaurant Muni',style:'French · Wed 27 May · Dinner 19:00 · 3 pax · Kyoto', q:'Restaurant Muni Arashiyama Kyoto' },
   { name:'Ukai-tei Ginza · PDR', style:'Teppanyaki · Fri 29 May · Dinner 17:30 · 3 pax',q:'Ukai-tei Ginza Tokyo' },
-  { name:'Tokyo Guided Tour · Tsukiji', style:'Private tour · Tue 26 May · Morning · with Iko', q:'Tsukiji Outer Market Tokyo' },
+  { name:'Kawaii Monster Land · Harajuku', style:'Family activity · Tue 26 May · 10:00 · 60 min', q:'https://maps.app.goo.gl/2sdL5DnfbDdPb3RH6' },
   { name:'Kyoto Guide · 4hrs', style:'Private tour · Thu 28 May · with Kevin',          q:'Kyoto' }
 ];
 var WL_REQUESTED = [];
@@ -689,6 +677,7 @@ var WL_LONGTERM = [
   { name:'Tempura Motoyoshi', style:'Tempura · From client brief' },
   { name:'Makoto',         style:'Beef · From client brief' },
   { name:'Seirinkan',      style:'Pizza · From client brief' },
+  { name:'400°C Pizza Tokyo',style:'Pizza · From client brief' },
   { name:'Bar Centifolia', style:'Cocktail · From client brief' },
   { name:'Ben Fiddich',    style:'Cocktail · From client brief' },
   { name:'Land Bar',       style:'Cocktail · From client brief' },
@@ -973,8 +962,8 @@ function renderItinerary(){
     +'<div class="banner-dates">23 May – 2 June 2026 · 5 Guests · 10 Nights · Tokyo + Kyoto</div>'
     +'<div class="banner-chips">'
     +'<span class="banner-chip confirmed">🍣 Sushi Nakano · Confirmed</span>'
-    +'<span class="banner-chip confirmed">🍕 400°C Pizza · Confirmed</span>'
     +'<span class="banner-chip confirmed">🥩 Nakahara PDR · Confirmed</span>'
+    +'<span class="banner-chip confirmed">🎀 Kawaii Monster Land · Confirmed</span>'
     +'<span class="banner-chip confirmed">🍣 Sushi Mitsui · Confirmed</span>'
     +'<span class="banner-chip confirmed">🇫🇷 Muni · Confirmed</span>'
     +'<span class="banner-chip confirmed">🥢 Ukai-tei PDR · Confirmed</span>'
@@ -1268,7 +1257,7 @@ function renderEmergency(){
     +'<div class="util-card host-card">'
     +  '<div class="host-bio">'
     +    '<div class="host-bio-head"><div class="host-bio-name">Iko · Tokyo</div><div class="host-bio-meta">Ikuko Tamura · based in Minami Aoyama</div></div>'
-    +    '<p class="host-bio-text">Based in Minami Aoyama, with a second home in Ito, Shizuoka. Ten years with Emirates Airline — six of them in the First Class cabin — followed by a stint as personal assistant to the chairman of Al Masood in Abu Dhabi, and senior VIP private guiding for overseas visitors to Japan. Trained in traditional ryokan omotenashi with the Hanairo-tei group, and a former hotel-management lecturer. Japanese and English. Joining the family for the Tsukiji morning on Tue 26 May.</p>'
+    +    '<p class="host-bio-text">Based in Minami Aoyama, with a second home in Ito, Shizuoka. Ten years with Emirates Airline — six of them in the First Class cabin — followed by a stint as personal assistant to the chairman of Al Masood in Abu Dhabi, and senior VIP private guiding for overseas visitors to Japan. Trained in traditional ryokan omotenashi with the Hanairo-tei group, and a former hotel-management lecturer. Japanese and English. On call as a Tokyo concierge throughout the week — currently no formal scheduled day.</p>'
     +  '</div>'
     +  '<div class="host-bio">'
     +    '<div class="host-bio-head"><div class="host-bio-name">Kevin · Kyoto</div><div class="host-bio-meta">Kevin Mueller · Kansai-based since 2009</div></div>'
@@ -1277,7 +1266,7 @@ function renderEmergency(){
     +'</div>'
     +'<div class="section-label">Happy Camper · Your Hosts</div>'
     +'<div class="contact-card">'
-    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">🌿</div><div><div class="contact-label">Iko · Ikuko Tamura</div><div class="contact-sub">Tour guide · Tue 26 May (Tsukiji) · WhatsApp / LINE</div></div></div><a href="tel:+818034270884" class="call-btn cn">📞 Call</a></div>'
+    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">🌿</div><div><div class="contact-label">Iko · Ikuko Tamura</div><div class="contact-sub">Tokyo concierge · On call · WhatsApp / LINE</div></div></div><a href="tel:+818034270884" class="call-btn cn">📞 Call</a></div>'
     +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">⛩</div><div><div class="contact-label">Kevin Mueller</div><div class="contact-sub">Kyoto tour guide · Thu 28 May · WhatsApp</div></div></div><a href="tel:+817044090848" class="call-btn cn">📞 Call</a></div>'
     +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">🍱</div><div><div class="contact-label">Tomoko Morikawa</div><div class="contact-sub">Programme Director · WhatsApp</div></div></div><a href="tel:+819061589006" class="call-btn cn">📞 Call</a></div>'
     +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">🏯</div><div><div class="contact-label">Gerhard Huber</div><div class="contact-sub">WhatsApp</div></div></div><a href="tel:+818069892107" class="call-btn cn">📞 Call</a></div>'
