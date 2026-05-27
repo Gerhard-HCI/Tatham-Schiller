@@ -493,40 +493,41 @@ var TRIP = {
       ]
     },
 
-    /* DAY 5 · Wed 27 May · Shinkansen + Muni */
+    /* DAY 5 · Wed 27 May · Shinkansen + Capella + Muni */
     {
       date:'2026-05-27', dayNum:5, weekday:'Wednesday, 27 May',
-      city:'Kyoto', cityClass:'kyoto', hotel:'Kyoto · Hotel TBC', hq:'luxury hotel Kyoto',
+      city:'Kyoto', cityClass:'kyoto', hotel:'Capella Kyoto', hq:'Capella Kyoto',
       hosted:false,
-      notes:'Shinkansen to Kyoto; Restaurant Muni confirmed at 19:00.',
+      notes:'Shinkansen to Kyoto · Capella pickup at Kyoto Station · Restaurant Muni confirmed at 19:00.',
       stops:[
-        { time:'Morning', type:'transport', badge:'Logistics', badgeType:'logistics',
+        { time:'Morning', type:'transport', badge:'Self-booked', badgeType:'self-booked',
           title:'Shinkansen · Tokyo → Kyoto',
-          sub:'Nozomi · Green Car · ~2h 15m',
-          loc:'Tokyo Station', addr:'1-9-1 Marunouchi, Chiyoda City', q:'Tokyo Station Shinkansen platform',
-          notes:'Green Car (First Class). Right-hand side has Mt Fuji views on a clear day. A staff member from Janu will escort the group to the platform. Luggage already forwarded to Kyoto.',
+          sub:'Nozomi · Green Car · ~2h 15m · Self-booked',
+          loc:'Tokyo Station', addr:'1-9-1 Marunouchi, Chiyoda City, Tokyo', q:'Tokyo Station Shinkansen platform',
+          notes:'Self-booked by the family. Green Car (First Class) recommended; right-hand side gives Mt Fuji views on a clear day. A staff member from Janu will escort the group to the platform. Luggage already forwarded to the Capella ahead of you.',
           alert:'Seats C & D — Mt Fuji side' },
-        { time:'~11:00', type:'activity', badge:'Suggestion', badgeType:'suggestion',
-          title:'Arrival Kyoto · Check-in',
-          sub:'Afternoon at leisure',
-          loc:'Kyoto Station', addr:'Higashishiokoji Kamadonocho, Shimogyo Ward, Kyoto', q:'Kyoto Station',
-          notes:'Arrival in Kyoto. A quiet afternoon to settle into the hotel and walk the immediate neighbourhood. Strong options nearby once you\'re settled: the Kamo River walk, a first look at Gion at the end of the afternoon, or a stop at Nishiki Market.', alert:null },
+        { time:'~11:30', type:'activity', badge:'Confirmed', badgeType:'confirmed',
+          title:'Capella Pickup · Kyoto Station',
+          sub:'Hotel transfer · Confirmed',
+          loc:'Capella Kyoto · arrival point', addr:'Capella Kyoto, Higashinotoin-dori Shijo-sagaru, Shimogyo Ward, Kyoto', q:'Capella Kyoto',
+          notes:'Capella Kyoto has arranged a confirmed pickup at the Shinkansen exit of Kyoto Station — look for the Capella sign on arrival. Direct transfer to the hotel; bags already in the rooms ahead of you.',
+          alert:'Look for the Capella sign at the Shinkansen exit' },
         { time:'19:00', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
           title:'Restaurant Muni',
           sub:'Dinner · Confirmed · 3 pax · 19:00',
-          loc:'Restaurant Muni · Arashiyama', addr:'Susukinobaba-cho 23, Saga-Tenryuji, Ukyo Ward, Kyoto', q:'Restaurant Muni Kyoto Arashiyama',
+          loc:'Restaurant Muni · Arashiyama', addr:'Susukinobaba-cho 23, Saga-Tenryuji, Ukyo Ward, Kyoto', q:'https://maps.app.goo.gl/CL5T1bToe1qEhQCE7',
           notes:'A singular French restaurant built around a one-of-a-kind charcoal and wood-fire grill. Chef Tsuji Takashi\'s menu changes with what arrives each day — fish from Yaizu, premium wagyu, vegetables from the chef\'s family farm. Counter seating to watch the fire.',
           alert:'3 pax · 19:00 · counter seating',
           dietary:'<strong>Severe allergy:</strong> Anthony — bee pollen, honey. Flagged with the restaurant.' }
       ]
     },
 
-    /* DAY 6 · Thu 28 May · Kyoto guide + Tenyuu */
+    /* DAY 6 · Thu 28 May · Kyoto guide + Benjamin Steak House */
     {
       date:'2026-05-28', dayNum:6, weekday:'Thursday, 28 May',
-      city:'Kyoto', cityClass:'kyoto', hotel:'Kyoto · Hotel TBC', hq:'luxury hotel Kyoto',
+      city:'Kyoto', cityClass:'kyoto', hotel:'Capella Kyoto', hq:'Capella Kyoto',
       hosted:true,
-      notes:'Hosted — Kevin. 4-hour confirmed Kyoto tour with Kevin. Tenyuu held as a suggestion for the evening.',
+      notes:'Hosted — Kevin. 4-hour confirmed Kyoto tour. Benjamin Steak House confirmed for dinner at 18:30.',
       stops:[
         { time:'09:00', type:'activity', badge:'Confirmed', badgeType:'confirmed',
           title:'Kyoto Tour with Kevin',
@@ -534,50 +535,64 @@ var TRIP = {
           loc:'Kyoto', addr:'Kyoto', q:'Kyoto',
           notes:'A confirmed 4-hour private morning with Kevin, tailored around the family\'s interests. Strong options: Fushimi Inari\'s vermillion gates, Arashiyama and the bamboo grove, Kinkaku-ji, the Philosopher\'s Walk, Gion\'s preserved machiya streets, or a half-day excursion to Nara to see the deer and Todai-ji\'s great Buddha.',
           alert:'4 hours confirmed · Kevin shapes the route on the morning' },
-        { time:'19:00', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
-          title:'Tenyuu',
-          sub:'Tempura · Counter · Suggestion',
-          loc:'Tenyuu Tempura Kyoto', addr:'Kyoto', q:'Tenyuu Tempura Kyoto',
-          notes:'A refined Kyoto tempura counter — currently held as a suggestion. Each piece fried to order and presented the moment it leaves the oil. A final Kyoto dinner choice will be firmed up closer to the date.',
-          alert:'Suggestion only · no fragrance at the counter' }
+        { time:'18:30', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
+          title:'Benjamin Steak House',
+          sub:'Dinner · Confirmed · 3 pax · 18:30',
+          loc:'Benjamin Steak House Kyoto', addr:'Kyoto', q:'Benjamin Steak House Kyoto',
+          notes:'Confirmed for 3 guests at 18:30 — the celebrated New York steakhouse brand brought to Kyoto. Dry-aged USDA Prime beef cooked over high heat, served family-style; the kind of place that works as a confident counterpoint to a day of temples. Reservation in the family\'s name.',
+          alert:'3 pax · 18:30 · jacket recommended for the gentlemen',
+          dietary:'<strong>Severe allergy:</strong> Anthony — bee pollen, honey. The kitchen has been flagged in advance.' }
       ]
     },
 
-    /* DAY 7 · Fri 29 May · Return Tokyo + Ukai-tei */
+    /* DAY 7 · Fri 29 May · Kyoto with Iko + MIYOSHI */
     {
       date:'2026-05-29', dayNum:7, weekday:'Friday, 29 May',
-      city:'Tokyo', cityClass:'', hotel:'Four Seasons Hotel Tokyo at Otemachi', hq:'Four Seasons Hotel Tokyo at Otemachi',
-      hosted:false,
-      notes:'Return to Tokyo · check in to Four Seasons Otemachi · Ukai-tei Ginza PDR confirmed early.',
+      city:'Kyoto', cityClass:'kyoto', hotel:'Capella Kyoto', hq:'Capella Kyoto',
+      hosted:true,
+      notes:'Hosted — Iko in Kyoto. Third Kyoto day · MIYOSHI confirmed for dinner at 20:00.',
       stops:[
-        { time:'Morning', type:'transport', badge:'Logistics', badgeType:'logistics',
-          title:'Kyoto → Tokyo · Shinkansen',
-          sub:'Nozomi · Green Car',
-          loc:'Kyoto Station', addr:'Kyoto Station', q:'Kyoto Station Shinkansen',
-          notes:'Return Shinkansen to Tokyo. Four Seasons Hotel Tokyo at Otemachi — overlooking the Imperial Palace gardens — will be your home for the remaining nights.', alert:null },
-        { time:'17:30', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
-          title:'Ukai-tei Ginza · PDR',
-          sub:'Early dinner · Confirmed · 3 pax · Private Dining Room',
-          loc:'Ukai-tei Ginza · Private Dining Room', addr:'Ginza Shochiku Square 11F, 5-15-8 Ginza, Chuo City, Tokyo', q:'Ukai-tei Ginza Tokyo',
-          notes:'Confirmed in the Private Dining Room — Tokyo\'s most theatrical teppanyaki, opulent, intimate, and exceptional wagyu cooked in front of you. Early seating works beautifully after a travel day with the children.',
-          alert:'3 pax · 17:30 · PDR confirmed',
-          dietary:'<strong>Severe allergy:</strong> Anthony — bee pollen, honey. <strong>Avoid:</strong> organ meats (Yeva, Max).' }
+        { time:'Morning', type:'activity', badge:'Suggestion', badgeType:'suggestion',
+          title:'Kyoto with Iko',
+          sub:'Open day shaped with Iko',
+          loc:'Kyoto', addr:'Kyoto', q:'Kyoto',
+          notes:'A flexible Kyoto day with Iko leading. Strong candidates: a quiet morning at Daitoku-ji and its sub-temples, a return to Arashiyama for the bamboo grove and Tenryu-ji at first light, Nishiki Market and a long walk through Gion in the afternoon, or a half-day to Nara for Todai-ji and the deer park.',
+          alert:'Iko shapes the route on the morning · Capella concierge can assist with onward bookings' },
+        { time:'20:00', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
+          title:'MIYOSHI',
+          sub:'Dinner · Confirmed · 20:00',
+          loc:'MIYOSHI Kyoto', addr:'Kyoto', q:'MIYOSHI restaurant Kyoto',
+          notes:'A confirmed dinner at MIYOSHI for the third Kyoto evening. Reservation in the family\'s name; please present it at the door.',
+          alert:'20:00 · no fragrance at the counter',
+          dietary:'<strong>Severe allergy:</strong> Anthony — bee pollen, honey. Flagged with the restaurant.' }
       ]
     },
 
-    /* DAY 8 · Sat 30 May · Free day */
+    /* DAY 8 · Sat 30 May · Return Tokyo · open day · adult dinner TBD */
     {
       date:'2026-05-30', dayNum:8, weekday:'Saturday, 30 May',
       city:'Tokyo', cityClass:'', hotel:'Four Seasons Hotel Tokyo at Otemachi', hq:'Four Seasons Hotel Tokyo at Otemachi',
       hosted:false,
-      notes:'Free day · Janu spa, art galleries, or quiet Tokyo morning.',
+      notes:'Return to Tokyo · check in to Four Seasons Otemachi · adult-only dinner option being firmed up.',
       stops:[
-        { time:'Open', type:'activity', badge:'Suggestion', badgeType:'suggestion',
-          title:'Free Day · Tokyo',
-          sub:'Rest / Discover',
+        { time:'Morning', type:'transport', badge:'Self-booked', badgeType:'self-booked',
+          title:'Shinkansen · Kyoto → Tokyo',
+          sub:'Nozomi · Green Car · ~2h 15m · Self-booked',
+          loc:'Kyoto Station', addr:'Higashishiokoji Kamadonocho, Shimogyo Ward, Kyoto', q:'Kyoto Station Shinkansen',
+          notes:'Self-booked by the family. Return Shinkansen to Tokyo. Four Seasons Hotel Tokyo at Otemachi — overlooking the Imperial Palace gardens — will be your home for the remaining nights. The Capella concierge will assist with onward luggage forwarding.',
+          alert:'Self-booked · Green Car recommended' },
+        { time:'Afternoon', type:'activity', badge:'Suggestion', badgeType:'suggestion',
+          title:'Tokyo at leisure',
+          sub:'Check-in · Rest / Discover',
           loc:'Four Seasons Hotel Tokyo at Otemachi', addr:'1-2-1 Otemachi, Chiyoda City, Tokyo', q:'Four Seasons Hotel Tokyo at Otemachi',
-          notes:'A clear day in Tokyo. Recommended: the Imperial Palace East Gardens on foot from the hotel, a slow morning at the hotel spa, or a long lunch in Aoyama. For Max and family: a Yamanote Line excursion to teamLab Planets at Toyosu. For the parents: gallery hopping through Aoyama and Roppongi.',
-          alert:null }
+          notes:'A quiet afternoon to settle into the Four Seasons. Strong options: the Imperial Palace East Gardens on foot from the hotel, a slow start at the spa, or a long lunch in Aoyama.',
+          alert:null },
+        { time:'Evening', type:'restaurant', badge:'Pending', badgeType:'pending',
+          title:'Dinner · Adults only · Being firmed up',
+          sub:'Adult-only dinner under consideration',
+          loc:'Tokyo', addr:'Tokyo', q:'Tokyo',
+          notes:'An adult-only dinner is being firmed up for this evening — a chance for the parents to step out while the children rest at the hotel. Details to be shared via WhatsApp.',
+          alert:'No booking yet · adults only when confirmed' }
       ]
     },
 
@@ -586,19 +601,20 @@ var TRIP = {
       date:'2026-05-31', dayNum:9, weekday:'Sunday, 31 May',
       city:'Tokyo', cityClass:'', hotel:'Four Seasons Hotel Tokyo at Otemachi', hq:'Four Seasons Hotel Tokyo at Otemachi',
       hosted:false,
-      notes:'Tokyo · Nakame no Teppen held as a suggestion in Nakameguro.',
+      notes:'Nakame no Teppen confirmed for dinner at 19:00 in Nakameguro.',
       stops:[
         { time:'Open', type:'activity', badge:'Suggestion', badgeType:'suggestion',
           title:'Free Day · Tokyo',
           sub:'Open day',
           loc:'Tokyo', addr:'Tokyo', q:'Tokyo',
           notes:'A flexible open day. Strong candidates: Kappabashi for knives, an Aoyama shopping circuit (Yohei Fukuda, Marquess, Hermès Ginza), or a quieter morning at Nezu Museum.', alert:null },
-        { time:'19:30', type:'restaurant', badge:'Suggestion', badgeType:'suggestion',
+        { time:'19:00', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
           title:'Nakame no Teppen',
-          sub:'Robatayaki · Izakaya · Suggestion',
+          sub:'Dinner · Confirmed · 3 pax · 19:00',
           loc:'Nakame no Teppen', addr:'Nakameguro, Tokyo', q:'Nakame no Teppen Nakameguro',
-          notes:'Dinner in Nakameguro — currently held as a suggestion. A lively traditional robatayaki izakaya where ingredients are grilled over charcoal directly in front of you. Atmospheric, fun, distinctly Japanese.',
-          alert:'Suggestion only · a walk along the Meguro canal beforehand is highly recommended' }
+          notes:'A confirmed dinner in Nakameguro for 3 at 19:00. A lively traditional robatayaki izakaya where ingredients are grilled over charcoal directly in front of you. Atmospheric, fun, distinctly Japanese — and a beautiful walk along the Meguro canal before sitting down.',
+          alert:'3 pax · 19:00 · arrive a few minutes early for the canal walk',
+          dietary:'<strong>Severe allergy:</strong> Anthony — bee pollen, honey.' }
       ]
     },
 
@@ -655,16 +671,17 @@ var WL_CONFIRMED = [
   { name:'Sushi Nakano',   style:'Sushi · Sun 24 May · Dinner 19:00 · 3 pax',         q:'Sushi Nakano Tokyo' },
   { name:'Yakiniku Nakahara · PDR', style:'Yakiniku · Mon 25 May · Dinner 18:00 · 5 pax', q:'Yakiniku Nakahara Tokyo' },
   { name:'Sushi Mitsui',   style:'Sushi · Tue 26 May · Dinner 20:30 · 3 pax',         q:'Sushi Mitsui Tokyo' },
-  { name:'Restaurant Muni',style:'French · Wed 27 May · Dinner 19:00 · 3 pax · Kyoto', q:'Restaurant Muni Arashiyama Kyoto' },
-  { name:'Ukai-tei Ginza · PDR', style:'Teppanyaki · Fri 29 May · Dinner 17:30 · 3 pax',q:'Ukai-tei Ginza Tokyo' },
+  { name:'Restaurant Muni',style:'French · Wed 27 May · Dinner 19:00 · 3 pax · Kyoto', q:'https://maps.app.goo.gl/CL5T1bToe1qEhQCE7' },
+  { name:'Benjamin Steak House', style:'Steakhouse · Thu 28 May · Dinner 18:30 · 3 pax · Kyoto', q:'Benjamin Steak House Kyoto' },
+  { name:'MIYOSHI',        style:'Counter · Fri 29 May · Dinner 20:00 · Kyoto',           q:'MIYOSHI restaurant Kyoto' },
+  { name:'Nakame no Teppen', style:'Robatayaki · Sun 31 May · Dinner 19:00 · 3 pax',       q:'Nakame no Teppen Nakameguro' },
   { name:'Kawaii Monster Land · Harajuku', style:'Family activity · Tue 26 May · 10:00 · 60 min', q:'https://maps.app.goo.gl/2sdL5DnfbDdPb3RH6' },
-  { name:'Kyoto Guide · 4hrs', style:'Private tour · Thu 28 May · with Kevin',          q:'Kyoto' }
+  { name:'Kyoto Guide · 4hrs', style:'Private tour · Thu 28 May · with Kevin',          q:'Kyoto' },
+  { name:'Iko · Kyoto Day',    style:'Private host · Fri 29 May · with Iko',             q:'Kyoto' }
 ];
 var WL_REQUESTED = [];
 var WL_SUGGESTIONS = [
   { name:'UMAYA',          style:'Welcome dinner · Sat 23 May · Izakaya',              q:'UMAYA izakaya Tokyo' },
-  { name:'Tenyuu',         style:'Tempura · Thu 28 May · Kyoto',                       q:'Tenyuu Tempura Kyoto' },
-  { name:'Nakame no Teppen', style:'Robatayaki · Sun 31 May · Nakameguro',             q:'Nakame no Teppen Nakameguro' },
   { name:'Setsugekka',     style:'Steak / Yakiniku · Mon 1 Jun · Farewell',            q:'Setsugekka Tokyo' }
 ];
 var WL_LONGTERM = [
@@ -959,15 +976,17 @@ function renderItinerary(){
   var html='<div class="trip-banner">'
     +'<div class="trip-banner-kana">A Private Culinary Journey · Happy Camper Ltd.</div>'
     +'<h2>Japan</h2>'
-    +'<div class="banner-dates">23 May – 2 June 2026 · 5 Guests · 10 Nights · Tokyo + Kyoto</div>'
+    +'<div class="banner-dates">23 May – 2 June 2026 · 5 Guests · 10 Nights · 4 in Tokyo · 3 in Kyoto · 3 in Tokyo</div>'
     +'<div class="banner-chips">'
     +'<span class="banner-chip confirmed">🍣 Sushi Nakano · Confirmed</span>'
     +'<span class="banner-chip confirmed">🥩 Nakahara PDR · Confirmed</span>'
     +'<span class="banner-chip confirmed">🎀 Kawaii Monster Land · Confirmed</span>'
     +'<span class="banner-chip confirmed">🍣 Sushi Mitsui · Confirmed</span>'
     +'<span class="banner-chip confirmed">🇫🇷 Muni · Confirmed</span>'
-    +'<span class="banner-chip confirmed">🥢 Ukai-tei PDR · Confirmed</span>'
     +'<span class="banner-chip confirmed">🗻 Kyoto Guide · Confirmed</span>'
+    +'<span class="banner-chip confirmed">🥩 Benjamin Steak · Confirmed</span>'
+    +'<span class="banner-chip confirmed">🍶 MIYOSHI · Confirmed</span>'
+    +'<span class="banner-chip confirmed">🔥 Nakame no Teppen · Confirmed</span>'
     +'</div></div>'
     +'<div class="booking-legend">'
     +'<span class="bl-item"><span class="bl-dot confirmed"></span>Confirmed</span>'
@@ -1257,7 +1276,7 @@ function renderEmergency(){
     +'<div class="util-card host-card">'
     +  '<div class="host-bio">'
     +    '<div class="host-bio-head"><div class="host-bio-name">Iko · Tokyo</div><div class="host-bio-meta">Ikuko Tamura · based in Minami Aoyama</div></div>'
-    +    '<p class="host-bio-text">Based in Minami Aoyama, with a second home in Ito, Shizuoka. Ten years with Emirates Airline — six of them in the First Class cabin — followed by a stint as personal assistant to the chairman of Al Masood in Abu Dhabi, and senior VIP private guiding for overseas visitors to Japan. Trained in traditional ryokan omotenashi with the Hanairo-tei group, and a former hotel-management lecturer. Japanese and English. On call as a Tokyo concierge throughout the week — currently no formal scheduled day.</p>'
+    +    '<p class="host-bio-text">Based in Minami Aoyama, with a second home in Ito, Shizuoka. Ten years with Emirates Airline — six of them in the First Class cabin — followed by a stint as personal assistant to the chairman of Al Masood in Abu Dhabi, and senior VIP private guiding for overseas visitors to Japan. Trained in traditional ryokan omotenashi with the Hanairo-tei group, and a former hotel-management lecturer. Japanese and English. Joining the family on Fri 29 May for the third Kyoto day; on call as a Tokyo concierge throughout the rest of the week.</p>'
     +  '</div>'
     +  '<div class="host-bio">'
     +    '<div class="host-bio-head"><div class="host-bio-name">Kevin · Kyoto</div><div class="host-bio-meta">Kevin Mueller · Kansai-based since 2009</div></div>'
@@ -1266,7 +1285,7 @@ function renderEmergency(){
     +'</div>'
     +'<div class="section-label">Happy Camper · Your Hosts</div>'
     +'<div class="contact-card">'
-    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">🌿</div><div><div class="contact-label">Iko · Ikuko Tamura</div><div class="contact-sub">Tokyo concierge · On call · WhatsApp / LINE</div></div></div><a href="tel:+818034270884" class="call-btn cn">📞 Call</a></div>'
+    +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">🌿</div><div><div class="contact-label">Iko · Ikuko Tamura</div><div class="contact-sub">Tokyo concierge · Fri 29 May (Kyoto) · WhatsApp / LINE</div></div></div><a href="tel:+818034270884" class="call-btn cn">📞 Call</a></div>'
     +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">⛩</div><div><div class="contact-label">Kevin Mueller</div><div class="contact-sub">Kyoto tour guide · Thu 28 May · WhatsApp</div></div></div><a href="tel:+817044090848" class="call-btn cn">📞 Call</a></div>'
     +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">🍱</div><div><div class="contact-label">Tomoko Morikawa</div><div class="contact-sub">Programme Director · WhatsApp</div></div></div><a href="tel:+819061589006" class="call-btn cn">📞 Call</a></div>'
     +'<div class="contact-row"><div class="contact-left"><div class="contact-icon ci-n">🏯</div><div><div class="contact-label">Gerhard Huber</div><div class="contact-sub">WhatsApp</div></div></div><a href="tel:+818069892107" class="call-btn cn">📞 Call</a></div>'
