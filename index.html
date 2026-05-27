@@ -515,10 +515,9 @@ var TRIP = {
         { time:'19:00', type:'restaurant', badge:'Confirmed', badgeType:'confirmed',
           title:'Restaurant Muni',
           sub:'Dinner · Confirmed · 3 pax · 19:00',
-          loc:'Restaurant Muni · Arashiyama', addr:'Susukinobaba-cho 23, Saga-Tenryuji, Ukyo Ward, Kyoto', q:'https://maps.app.goo.gl/CL5T1bToe1qEhQCE7',
+          loc:'Restaurant Muni · Arashiyama', addr:'Susukinobaba-cho 23, Saga-Tenryuji, Ukyo Ward, Kyoto', q:'https://maps.app.goo.gl/kKSiJU7ZvQ53Toin7',
           notes:'A singular French restaurant built around a one-of-a-kind charcoal and wood-fire grill. Chef Tsuji Takashi\'s menu changes with what arrives each day — fish from Yaizu, premium wagyu, vegetables from the chef\'s family farm. Counter seating to watch the fire.',
-          alert:'3 pax · 19:00 · counter seating',
-          dietary:'<strong>Severe allergy:</strong> Anthony — bee pollen, honey. Flagged with the restaurant.' }
+          alert:'3 pax · 19:00 · counter seating' }
       ]
     },
 
@@ -540,8 +539,7 @@ var TRIP = {
           sub:'Dinner · Confirmed · 3 pax · 18:30',
           loc:'Benjamin Steak House Kyoto', addr:'Kyoto', q:'Benjamin Steak House Kyoto',
           notes:'Confirmed for 3 guests at 18:30 — the celebrated New York steakhouse brand brought to Kyoto. Dry-aged USDA Prime beef cooked over high heat, served family-style; the kind of place that works as a confident counterpoint to a day of temples. Reservation in the family\'s name.',
-          alert:'3 pax · 18:30 · jacket recommended for the gentlemen',
-          dietary:'<strong>Severe allergy:</strong> Anthony — bee pollen, honey. The kitchen has been flagged in advance.' }
+          alert:'3 pax · 18:30 · jacket recommended for the gentlemen' }
       ]
     },
 
@@ -563,8 +561,7 @@ var TRIP = {
           sub:'Dinner · Confirmed · 20:00',
           loc:'MIYOSHI Kyoto', addr:'Kyoto', q:'MIYOSHI restaurant Kyoto',
           notes:'A confirmed dinner at MIYOSHI for the third Kyoto evening. Reservation in the family\'s name; please present it at the door.',
-          alert:'20:00 · no fragrance at the counter',
-          dietary:'<strong>Severe allergy:</strong> Anthony — bee pollen, honey. Flagged with the restaurant.' }
+          alert:'20:00 · no fragrance at the counter' }
       ]
     },
 
@@ -613,8 +610,7 @@ var TRIP = {
           sub:'Dinner · Confirmed · 3 pax · 19:00',
           loc:'Nakame no Teppen', addr:'Nakameguro, Tokyo', q:'Nakame no Teppen Nakameguro',
           notes:'A confirmed dinner in Nakameguro for 3 at 19:00. A lively traditional robatayaki izakaya where ingredients are grilled over charcoal directly in front of you. Atmospheric, fun, distinctly Japanese — and a beautiful walk along the Meguro canal before sitting down.',
-          alert:'3 pax · 19:00 · arrive a few minutes early for the canal walk',
-          dietary:'<strong>Severe allergy:</strong> Anthony — bee pollen, honey.' }
+          alert:'3 pax · 19:00 · arrive a few minutes early for the canal walk' }
       ]
     },
 
@@ -636,7 +632,7 @@ var TRIP = {
           loc:'Setsugekka', addr:'Tokyo', q:'Setsugekka Tokyo',
           notes:'Currently held as a suggestion for the final evening. Operated by the same group behind what is ranked as Japan\'s number one wagyu kaiseki restaurant — an à la carte steak and yakiniku experience with extreme standards of beef quality. Being firmed up closer to the date.',
           alert:'Suggestion only · being firmed up closer to the date',
-          dietary:'<strong>Severe allergy:</strong> Anthony — bee pollen, honey. <strong>Avoid:</strong> organ meats (Yeva, Max).' }
+          dietary:'<strong>Avoid:</strong> organ meats (Yeva, Max).' }
       ]
     },
 
@@ -671,7 +667,7 @@ var WL_CONFIRMED = [
   { name:'Sushi Nakano',   style:'Sushi · Sun 24 May · Dinner 19:00 · 3 pax',         q:'Sushi Nakano Tokyo' },
   { name:'Yakiniku Nakahara · PDR', style:'Yakiniku · Mon 25 May · Dinner 18:00 · 5 pax', q:'Yakiniku Nakahara Tokyo' },
   { name:'Sushi Mitsui',   style:'Sushi · Tue 26 May · Dinner 20:30 · 3 pax',         q:'Sushi Mitsui Tokyo' },
-  { name:'Restaurant Muni',style:'French · Wed 27 May · Dinner 19:00 · 3 pax · Kyoto', q:'https://maps.app.goo.gl/CL5T1bToe1qEhQCE7' },
+  { name:'Restaurant Muni',style:'French · Wed 27 May · Dinner 19:00 · 3 pax · Kyoto', q:'https://maps.app.goo.gl/kKSiJU7ZvQ53Toin7' },
   { name:'Benjamin Steak House', style:'Steakhouse · Thu 28 May · Dinner 18:30 · 3 pax · Kyoto', q:'Benjamin Steak House Kyoto' },
   { name:'MIYOSHI',        style:'Counter · Fri 29 May · Dinner 20:00 · Kyoto',           q:'MIYOSHI restaurant Kyoto' },
   { name:'Nakame no Teppen', style:'Robatayaki · Sun 31 May · Dinner 19:00 · 3 pax',       q:'Nakame no Teppen Nakameguro' },
@@ -1316,7 +1312,7 @@ function renderEmergency(){
     +'<li><span class="info-emoji">🚑</span><div class="info-text"><strong>Kyukyusha wo yonde kudasai · 救急車を呼んでください</strong>Please call an ambulance</div></li>'
     +'<li><span class="info-emoji">🏥</span><div class="info-text"><strong>Byoin wa doko desu ka? · 病院はどこですか？</strong>Where is the hospital?</div></li>'
     +'<li><span class="info-emoji">💊</span><div class="info-text"><strong>Kusuri ga hitsuyou desu · 薬が必要です</strong>I need medicine</div></li>'
-    +'<li><span class="info-emoji">🚫</span><div class="info-text"><strong>~ wa taberaremasen · ～は食べられません</strong>I cannot eat ~ (critical for Anthony — honey/bee pollen)</div></li>'
+    +'<li><span class="info-emoji">🚫</span><div class="info-text"><strong>~ wa taberaremasen · ～は食べられません</strong>I cannot eat ~</div></li>'
     +'<li><span class="info-emoji">🇬🇧</span><div class="info-text"><strong>Eigo ga hanasemasu ka? · 英語が話せますか？</strong>Do you speak English?</div></li>'
     +'</ul></div>';
 }
